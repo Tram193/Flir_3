@@ -115,10 +115,10 @@ void DjiUser_StartTask(void const *argument)
         .UartGetStatus = HalUart_GetStatus,
     };
     T_DjiFirmwareVersion firmwareVersion = {
-        .majorVersion = 1,
-        .minorVersion = 0,
-        .modifyVersion = 0,
-        .debugVersion = 0,
+        .majorVersion   = FIRMWARE_MAJOR_VERSION,
+        .minorVersion   = FIRMWARE_MINOR_VERSION,
+        .modifyVersion  = FIRMWARE_MODIFY_VERSION,
+        .debugVersion   = FIRMWARE_DEBUG_VERSION,
     };
     
     T_DjiHalNetworkHandler halNetworkHandler = {

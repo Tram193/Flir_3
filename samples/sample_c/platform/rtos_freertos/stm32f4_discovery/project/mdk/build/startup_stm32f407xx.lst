@@ -875,12 +875,12 @@ ARM Macro Assembler    Page 14
               00000000 
 Command Line: --debug --xref --cpreproc --diag_suppress=9931 --cpu=Cortex-M4.fp
 .sp --apcs=interwork --depend=.\objects\startup_stm32f407xx.d -o.\objects\start
-up_stm32f407xx.o -IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\
-Device\ST\STM32F4xx\Include --predefine="__MICROLIB SETA 1" --predefine="__UVIS
-ION_VERSION SETA 537" --predefine="STM32F407xx SETA 1" --cpreproc_opts=-DUSE_HA
-L_DRIVER,-DSTM32F407xx,-DSYSTEM_ARCH_RTOS=1 --list=.\build\startup_stm32f407xx.
-lst ..\..\drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f
-407xx.s
+up_stm32f407xx.o -IC:\Users\Gremsy-KinhNguyen\AppData\Local\Arm\Packs\Keil\STM3
+2F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include -IC:\Keil_v5\ARM\CMS
+IS\Include --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 
+537" --predefine="STM32F407xx SETA 1" --cpreproc_opts=-DUSE_HAL_DRIVER,-DSTM32F
+407xx,-DSYSTEM_ARCH_RTOS=1 --list=.\build\startup_stm32f407xx.lst ..\..\drivers
+\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f407xx.s
 
 
 

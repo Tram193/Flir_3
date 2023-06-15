@@ -1,0 +1,240 @@
+{
+    "version":{
+        "major":1,
+        "minor":1
+    },
+    "main_interface":{
+        "floating_window":{
+            "is_enable":true
+        },
+        "widget_list":[
+            {
+                "widget_index":0,
+                "widget_type":"list",
+                "widget_name":"Layout",
+                "list_item":[
+                    {
+                        "item_name":"Security",
+                        "icon_file_set":{
+                            "icon_file_name_selected":"icon_list_security.png",
+                            "icon_file_name_unselected":"icon_list_security.png"
+                        }
+                    },
+                    {
+                        "item_name":"Fullscreen",
+                        "icon_file_set":{
+                            "icon_file_name_selected":"icon_list_fullscreen.png",
+                            "icon_file_name_unselected":"icon_list_fullscreen.png"
+                        }
+                    },
+                    {
+                        "item_name":"Pip",
+                        "icon_file_set":{
+                            "icon_file_name_selected":"icon_list_pip.png",
+                            "icon_file_name_unselected":"icon_list_pip.png"
+                        }
+                    }
+                ]
+            },
+            {
+                "widget_index":1,
+                "widget_type":"switch",
+                "widget_name":"Maincamera",
+                "icon_file_set":{
+                    "icon_file_name_selected":"button_selected_thermal.png",
+                    "icon_file_name_unselected":"button_selected_visible.png"
+                }
+            },
+            {
+                "widget_index": 2,
+                "widget_type": "scale",
+                "widget_name": "Opacity",
+                "icon_file_set":  {
+                    "icon_file_name_selected" :  "icon_scale.png",
+                    "icon_file_name_unselected" :  "icon_scale.png"
+                }
+            },
+            {
+                "widget_index":3,
+                "widget_type":"switch",
+                "widget_name":"Gimbal",
+                "icon_file_set":{
+                   "icon_file_name_selected":"gimbal_on_item.png",
+                   "icon_file_name_unselected":"gimbal_off_item.png"
+                }
+            }
+        ]
+    },
+    "config_interface":{
+        "text_input_box" :{
+            "widget_name" : "Reserved",
+            "placeholder_text" : "Please input message",
+            "is_enable" :true
+        },
+        "widget_list" :[
+            {
+                "widget_index" :4,
+                "widget_type" : "list",
+                "widget_name" : "Thermal Palette",
+                "list_item" :[
+                    {
+                        "item_name" : "01_Gray"
+                    },
+                    {
+                        "item_name" : "02_Gray-I"
+                    },
+                    {
+                        "item_name" : "03_BlackGreen"
+                    },
+                    {
+                        "item_name" : "04_BlackRed"
+                    },
+                    {
+                        "item_name" : "05_BWRGB"
+                    },
+                    {
+                        "item_name" : "06_WBRGB"
+                    },
+                    {
+                        "item_name" : "07_BWIron"
+                    },
+                    {
+                        "item_name" : "08_BWIron-I"
+                    },
+                    {
+                        "item_name" : "09_Iron"
+                    },
+                    {
+                        "item_name" : "10_Fire"
+                    },
+                    {
+                        "item_name" : "11_Rainbow"
+                    },
+                    {
+                        "item_name" : "12_Rainbow-HC"
+                    },
+                    {
+                        "item_name" : "13_Natural"
+                    },
+                    {
+                        "item_name" : "14_Sepia"
+                    },
+                    {
+                        "item_name" : "15_Temperature"
+                    }
+                ]
+            },
+            {
+                "widget_index" :5,
+                "widget_type" : "int_input_box",
+                "widget_name" : "Time Stabilization",
+                "int_input_box_hint" : "unit:s"
+            },
+            {
+                "widget_index" :6,
+                "widget_type" : "scale",
+                "widget_name" : "Hot Rejection",
+                "int_input_box_hint" : "unit:%"
+            },
+            {
+                "widget_index" :7,
+                "widget_type" : "scale",
+                "widget_name" : "Cool Rejection",
+                "int_input_box_hint" : "unit:%"
+            },
+            {
+                "widget_index" :8,
+                "widget_type" : "list",
+                "widget_name" : "Alarm Mode",
+                "list_item" :[
+                    {
+                        "item_name" : "OFF"
+                    },
+                    {
+                        "item_name" : "ABOVE"
+                    },
+                    {
+                        "item_name" : "BELOW"
+                    },
+                    {
+                        "item_name" : "BETWEEN"
+                    },
+                    {
+                        "item_name" : "OUTSIDE"
+                    }
+                ]
+            },
+            {
+                "widget_index" :9,
+                "widget_type" : "scale",
+                "widget_name" : "Alarm Above"
+            },
+            {
+                "widget_index" :10,
+                "widget_type" : "scale",
+                "widget_name" : "Alarm Below"
+            },
+            {
+                "widget_index" :11,
+                "widget_type" : "list",
+                "widget_name" : "Alarm Color",
+                "list_item" :[
+                    {
+                        "item_name":"Red_Green_Blue"
+                    },
+                    {
+                        "item_name":"Green_Red_Blue"
+                    },
+                    {
+                        "item_name":"Blue_Green_Red"
+                    }
+                ]
+            },
+            {
+                "widget_index" :12,
+                "widget_type" : "list",
+                "widget_name" : "Axis Setting",
+                "list_item" :[
+                    {
+                        "item_name" : "Pitch"
+                    },
+                    {
+                        "item_name" : "Roll"
+                    },
+                    {
+                        "item_name" : "Yaw"
+                    }
+                ]
+            },
+            {
+                "widget_index" :13,
+                "widget_type" : "int_input_box",
+                "widget_name" : " - Stiffness",
+                "int_input_box_hint" : "unit"
+            },
+            {
+                "widget_index" :14,
+                "widget_type" : "int_input_box",
+                "widget_name" : " - HoldStrength",
+                "int_input_box_hint" : "unit"
+            },
+            {
+                "widget_index" :15,
+                "widget_type" : "int_input_box",
+                "widget_name" : "GyroFiler",
+                "int_input_box_hint" : "unit"
+            },
+            {
+                "widget_index" :16,
+                "widget_type" : "int_input_box",
+                "widget_name" : "OutputFiler",
+                "int_input_box_hint" : "unit"
+            },
+            {
+                "widget_index" :17,
+                "widget_type" : "button",
+                "widget_name" : "Reboot System"
+            }
+        ]
+    }
+}

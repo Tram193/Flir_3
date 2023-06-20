@@ -28,6 +28,8 @@
 #include "dji_logger.h"
 #include "dji_aircraft_info.h"
 
+#include "camera/gsdk_flir_camera.h"
+
 /* Private constants ---------------------------------------------------------*/
 
 /* Private types -------------------------------------------------------------*/
@@ -149,7 +151,15 @@ static T_DjiReturnCode DjiTest_PowerOffNotificationCallback(bool *powerOffPrepar
 {
     USER_LOG_INFO("aircraft will power off soon.");
 
-    *powerOffPreparationFlag = true;
+    /*!< Power off camera */
+
+    if(FLIRCamera->isStoringParams) {
+        *powerOffPreparationFlag = true;
+    }
+    else {
+        /*!< Send event to store parameters */
+        GsdkFLIR_CameraSetEvent(CAM_EVENT_SET_DEFAULT_PARAM);
+    }
 
     return DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS;
 }

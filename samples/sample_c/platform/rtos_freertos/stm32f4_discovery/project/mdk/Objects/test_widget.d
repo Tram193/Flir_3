@@ -23,12 +23,9 @@
 .\objects\test_widget.o: ..\..\middlewares\Third_Party\FreeRTOS\Source\include\mpu_wrappers.h
 .\objects\test_widget.o: ..\..\middlewares\Third_Party\FreeRTOS\Source\include\task.h
 .\objects\test_widget.o: ..\..\middlewares\Third_Party\FreeRTOS\Source\include\list.h
-.\objects\test_widget.o: ..\..\..\..\..\..\..\gremsy_lib\camera/gsdk_wws_camera.h
+.\objects\test_widget.o: ..\..\..\..\..\..\..\gremsy_lib\camera/gsdk_flir_camera.h
 .\objects\test_widget.o: ..\..\..\..\..\..\..\gremsy_lib\std_typedef.h
 .\objects\test_widget.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
-.\objects\test_widget.o: ..\..\..\..\..\..\..\psdk_lib\include\dji_positioning.h
-.\objects\test_widget.o: ..\..\..\..\..\..\..\psdk_lib\include\dji_time_sync.h
-.\objects\test_widget.o: ..\..\..\..\..\..\..\psdk_lib\include\dji_fc_subscription.h
 .\objects\test_widget.o: ..\..\..\..\..\module_sample\camera_emu/test_payload_cam_emu_base.h
 .\objects\test_widget.o: ..\..\..\..\..\..\..\psdk_lib\include\dji_payload_camera.h
 .\objects\test_widget.o: ..\..\..\..\..\..\..\gremsy_lib\gimbal/gsdk_gimbal.h

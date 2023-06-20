@@ -14,184 +14,287 @@
                 "widget_name":"Layout",
                 "list_item":[
                     {
-                        "item_name":"Security",
+                        "item_name":"Thermal",
                         "icon_file_set":{
-                            "icon_file_name_selected":"icon_list_security.png",
-                            "icon_file_name_unselected":"icon_list_security.png"
+                            "icon_file_name_selected":"list_video_mode_ir.png",
+                            "icon_file_name_unselected":"list_video_mode_ir.png"
                         }
                     },
                     {
-                        "item_name":"Fullscreen",
+                        "item_name":"Visible",
                         "icon_file_set":{
-                            "icon_file_name_selected":"icon_list_fullscreen.png",
-                            "icon_file_name_unselected":"icon_list_fullscreen.png"
+                            "icon_file_name_selected":"list_video_mode_vis.png",
+                            "icon_file_name_unselected":"list_video_mode_vis.png"
                         }
                     },
                     {
                         "item_name":"Pip",
                         "icon_file_set":{
-                            "icon_file_name_selected":"icon_list_pip.png",
-                            "icon_file_name_unselected":"icon_list_pip.png"
+                            "icon_file_name_selected":"list_video_mode_pip.png",
+                            "icon_file_name_unselected":"list_video_mode_pip.png"
                         }
                     }
                 ]
             },
             {
                 "widget_index":1,
-                "widget_type":"switch",
-                "widget_name":"Maincamera",
+                "widget_type":"button",
+                "widget_name":"FFC",
                 "icon_file_set":{
-                    "icon_file_name_selected":"button_selected_thermal.png",
-                    "icon_file_name_unselected":"button_selected_visible.png"
+                    "icon_file_name_selected":"button_FFC_select.png",
+                    "icon_file_name_unselected":"button_FFC_unselect.png"
                 }
             },
             {
-                "widget_index": 2,
-                "widget_type": "scale",
-                "widget_name": "Opacity",
-                "icon_file_set":  {
-                    "icon_file_name_selected" :  "icon_scale.png",
-                    "icon_file_name_unselected" :  "icon_scale.png"
+                "widget_index":2,
+                "widget_type":"switch",
+                "widget_name":"MSX",
+                "icon_file_set":{
+                    "icon_file_name_selected":"switch_selected_MSX.png",
+                    "icon_file_name_unselected":"switch_unselected_MSX.png"
                 }
             },
             {
                 "widget_index":3,
-                "widget_type":"switch",
-                "widget_name":"Gimbal",
+                "widget_type":"scale",
+                "widget_name":"MSX Length",
                 "icon_file_set":{
-                   "icon_file_name_selected":"gimbal_on_item.png",
-                   "icon_file_name_unselected":"gimbal_off_item.png"
+                    "icon_file_name_selected":"icon_scale.png",
+                    "icon_file_name_unselected":"icon_scale.png"
                 }
             }
         ]
     },
     "config_interface":{
-        "text_input_box" :{
-            "widget_name" : "Reserved",
-            "placeholder_text" : "Please input message",
-            "is_enable" :true
+        "text_input_box":{
+            "widget_name":"Reserved",
+            "placeholder_text":"Please input message",
+            "is_enable":true
         },
-        "widget_list" :[
+        "widget_list":[
             {
-                "widget_index" :4,
-                "widget_type" : "list",
-                "widget_name" : "Thermal Palette",
-                "list_item" :[
+                "widget_index":4,
+                "widget_type":"list",
+                "widget_name":"Thermal Palette",
+                "list_item":[
                     {
-                        "item_name" : "01_Gray"
+                        "item_name":"WhiteHot"
                     },
                     {
-                        "item_name" : "02_Gray-I"
+                        "item_name":"BlackHot"
                     },
                     {
-                        "item_name" : "03_BlackGreen"
+                        "item_name":"RedHot"
                     },
                     {
-                        "item_name" : "04_BlackRed"
+                        "item_name":"Rainbow"
                     },
                     {
-                        "item_name" : "05_BWRGB"
+                        "item_name":"Ironbow"
                     },
                     {
-                        "item_name" : "06_WBRGB"
+                        "item_name":"Lava"
                     },
                     {
-                        "item_name" : "07_BWIron"
+                        "item_name":"Arctic"
                     },
                     {
-                        "item_name" : "08_BWIron-I"
+                        "item_name":"Globow"
                     },
                     {
-                        "item_name" : "09_Iron"
+                        "item_name":"Fusion"
                     },
                     {
-                        "item_name" : "10_Fire"
+                        "item_name":"InstAlert"
                     },
                     {
-                        "item_name" : "11_Rainbow"
+                        "item_name":"GreyRed"
                     },
                     {
-                        "item_name" : "12_Rainbow-HC"
+                        "item_name":"Spepia"
                     },
                     {
-                        "item_name" : "13_Natural"
+                        "item_name":"Ironbow2"
                     },
                     {
-                        "item_name" : "14_Sepia"
+                        "item_name":"RainbowHC"
                     },
                     {
-                        "item_name" : "15_Temperature"
+                        "item_name":"GreenHot"
+                    },
+                    {
+                        "item_name":"WhiteHotIso"
+                    },
+                    {
+                        "item_name":"BlackHotIso"
+                    },
+                    {
+                        "item_name":"FusionIso"
+                    },
+                    {
+                        "item_name":"RainbowIso"
+                    },
+                    {
+                        "item_name":"GlobowIso"
+                    },
+                    {
+                        "item_name":"IronbowWhiteHotIso"
+                    },
+                    {
+                        "item_name":"IronBowBlackHotIso"
+                    },
+                    {
+                        "item_name":"SepiaIso"
+                    },
+                    {
+                        "item_name":"MidrangeWhiteHotIso"
+                    },
+                    {
+                        "item_name":"MidrangeBlackHotIso"
+                    },
+                    {
+                        "item_name":"IcefireIso"
+                    },
+                    {
+                        "item_name":"RainbowHCIso"
+                    },
+                    {
+                        "item_name":"RedHotIso"
+                    },
+                    {
+                        "item_name":"GreenHotIso"
+                    },
+                    {
+                        "item_name":"ArcticBlackHotIso"
                     }
                 ]
             },
             {
-                "widget_index" :5,
-                "widget_type" : "int_input_box",
-                "widget_name" : "Time Stabilization",
-                "int_input_box_hint" : "unit:s"
-            },
-            {
-                "widget_index" :6,
-                "widget_type" : "scale",
-                "widget_name" : "Hot Rejection",
-                "int_input_box_hint" : "unit:%"
-            },
-            {
-                "widget_index" :7,
-                "widget_type" : "scale",
-                "widget_name" : "Cool Rejection",
-                "int_input_box_hint" : "unit:%"
-            },
-            {
-                "widget_index" :8,
-                "widget_type" : "list",
-                "widget_name" : "Alarm Mode",
-                "list_item" :[
+                "widget_index":5,
+                "widget_type":"list",
+                "widget_name":"Scene",
+                "list_item":[
                     {
-                        "item_name" : "OFF"
+                        "item_name":"Linear"
                     },
                     {
-                        "item_name" : "ABOVE"
+                        "item_name":"Default"
                     },
                     {
-                        "item_name" : "BELOW"
+                        "item_name":"SeaOrSkye"
                     },
                     {
-                        "item_name" : "BETWEEN"
+                        "item_name":"Outdoor"
                     },
                     {
-                        "item_name" : "OUTSIDE"
+                        "item_name":"Indoor"
+                    },
+                    {
+                        "item_name":"Manual"
+                    },
+                    {
+                        "item_name":"Custom1"
+                    },
+                    {
+                        "item_name":"Custom2"
                     }
                 ]
             },
             {
-                "widget_index" :9,
-                "widget_type" : "scale",
-                "widget_name" : "Alarm Above"
-            },
-            {
-                "widget_index" :10,
-                "widget_type" : "scale",
-                "widget_name" : "Alarm Below"
-            },
-            {
-                "widget_index" :11,
-                "widget_type" : "list",
-                "widget_name" : "Alarm Color",
-                "list_item" :[
+                "widget_index":6,
+                "widget_type":"list",
+                "widget_name":"File Format",
+                "list_item":[
                     {
-                        "item_name":"Red_Green_Blue"
+                        "item_name":"JPEG_TIFF"
                     },
                     {
-                        "item_name":"Green_Red_Blue"
-                    },
-                    {
-                        "item_name":"Blue_Green_Red"
+                        "item_name":"FFF"
                     }
                 ]
             },
             {
-                "widget_index" :12,
+                "widget_index":7,
+                "widget_type":"list",
+                "widget_name":"Video Type",
+                "list_item":[
+                    {
+                        "item_name":"H264"
+                    },
+                    {
+                        "item_name":"TIFF"
+                    }
+                ]
+            },
+            {
+                "widget_index":8,
+                "widget_type":"switch",
+                "widget_name":"OSD"
+            },
+            {
+                "widget_index":9,
+                "widget_type":"list",
+                "widget_name":"Temp Unit",
+                "list_item":[
+                    {
+                        "item_name":"C"
+                    },
+                    {
+                        "item_name":"F"
+                    }
+                ]
+            },
+            {
+                "widget_index":10,
+                "widget_type":"list",
+                "widget_name":"Condition",
+                "list_item":[
+                    {
+                        "item_name":"Clear"
+                    },
+                    {
+                        "item_name":"Scattered"
+                    },
+                    {
+                        "item_name":"Cloudy"
+                    }
+                ]
+            },
+            {
+                "widget_index":11,
+                "widget_type":"list",
+                "widget_name":"Humidity",
+                "list_item":[
+                    {
+                        "item_name":"Low (<30%)"
+                    },
+                    {
+                        "item_name":"Medium (~45%)"
+                    },
+                    {
+                        "item_name":"High (>60%)"
+                    }
+                ]
+            },
+            {
+                "widget_index":12,
+                "widget_type":"int_input_box",
+                "widget_name":"Air Temp",
+                "int_input_box_hint":"[-50:40]"
+            },
+            {
+                "widget_index":13,
+                "widget_type":"scale",
+                "widget_name":"Emissivity"
+            },
+            {
+                "widget_index":14,
+                "widget_type":"int_input_box",
+                "widget_name":"Subject Range",
+                "int_input_box_hint":"unit:M"
+            },
+            {
+                "widget_index" :15,
                 "widget_type" : "list",
                 "widget_name" : "Axis Setting",
                 "list_item" :[
@@ -207,33 +310,33 @@
                 ]
             },
             {
-                "widget_index" :13,
-                "widget_type" : "int_input_box",
-                "widget_name" : " - Stiffness",
-                "int_input_box_hint" : "unit"
+                "widget_index":16,
+                "widget_type":"int_input_box",
+                "widget_name":" - Stiffness",
+                "int_input_box_hint":"unit:s"
             },
             {
-                "widget_index" :14,
-                "widget_type" : "int_input_box",
-                "widget_name" : " - HoldStrength",
-                "int_input_box_hint" : "unit"
+                "widget_index":17,
+                "widget_type":"int_input_box",
+                "widget_name":" - HoldStrength",
+                "int_input_box_hint":"unit:s"
             },
             {
-                "widget_index" :15,
-                "widget_type" : "int_input_box",
-                "widget_name" : "GyroFiler",
-                "int_input_box_hint" : "unit"
+                "widget_index":18,
+                "widget_type":"int_input_box",
+                "widget_name":"GyroFiler",
+                "int_input_box_hint":"unit:s"
             },
             {
-                "widget_index" :16,
-                "widget_type" : "int_input_box",
-                "widget_name" : "OutputFiler",
-                "int_input_box_hint" : "unit"
+                "widget_index":19,
+                "widget_type":"int_input_box",
+                "widget_name":"OutputFiler",
+                "int_input_box_hint":"unit:s"
             },
             {
-                "widget_index" :17,
-                "widget_type" : "button",
-                "widget_name" : "Reboot System"
+                "widget_index":20,
+                "widget_type":"button",
+                "widget_name":"Reboot System"
             }
         ]
     }

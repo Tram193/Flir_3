@@ -16,6 +16,6 @@
 .\objects\test_positioning.o: ..\..\..\..\..\..\..\psdk_lib\include\dji_platform.h
 .\objects\test_positioning.o: ..\..\..\..\..\module_sample\utils/util_misc.h
 .\objects\test_positioning.o: ..\..\..\..\..\module_sample\time_sync/test_time_sync.h
-.\objects\test_positioning.o: ..\..\..\..\..\..\..\gremsy_lib\camera/gsdk_wws_camera.h
+.\objects\test_positioning.o: ..\..\..\..\..\..\..\gremsy_lib\camera/gsdk_flir_camera.h
 .\objects\test_positioning.o: ..\..\..\..\..\..\..\gremsy_lib\std_typedef.h
 .\objects\test_positioning.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

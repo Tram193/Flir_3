@@ -12,3 +12,6 @@
 .\objects\test_power_management.o: ..\..\..\..\..\..\..\psdk_lib\include\dji_logger.h
 .\objects\test_power_management.o: ..\..\..\..\..\..\..\psdk_lib\include\dji_platform.h
 .\objects\test_power_management.o: ..\..\..\..\..\..\..\psdk_lib\include\dji_aircraft_info.h
+.\objects\test_power_management.o: ..\..\..\..\..\..\..\gremsy_lib\camera/gsdk_flir_camera.h
+.\objects\test_power_management.o: ..\..\..\..\..\..\..\gremsy_lib\std_typedef.h
+.\objects\test_power_management.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

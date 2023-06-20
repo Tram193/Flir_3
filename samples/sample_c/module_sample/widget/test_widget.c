@@ -37,7 +37,7 @@
 #include "task.h"
 
 /*!< Include camera control */
-#include "camera/gsdk_wws_camera.h"
+#include "camera/gsdk_flir_camera.h"
 #include "camera_emu/test_payload_cam_emu_base.h"
 /*!< Include gremsy Gimbal*/
 #include "gimbal/gsdk_gimbal.h"
@@ -55,29 +55,25 @@
 enum 
 {
     TYPE_LIST_MAIN_LAYOUT_INDEX             = 0,
-    TYPE_SWITCH_MAIN_CAMERA_INDEX           ,
-    TYPE_SCALE_THERMAL_IMAGE_OPACITY        ,
-    TYPE_SWITCH_GIMBAL_MOTOR_CONTROL        ,
-//    TYPE_INT_PITCH_DOWN_INDEX               ,
+    TYPE_BUTTON_FFC_INDEX                   = 1,
+    TYPE_SWITCH_MSX_INDEX                   = 2,
+    TYPE_MSX_LENGTH_INDEX                   = 3,
 
-    TYPE_LIST_PALETTE_INDEX                 ,
+    TYPE_LIST_PALETTE_INDEX                 = 4,
+    TYPE_LIST_SCENE_INDEX                   = 5,
+    TYPE_LIST_FILE_FORMAT_INDEX             = 6,
+    TYPE_LIST_VIDEO_TYPE_INDEX              = 7,
     
-    /*!< RANGE SETTING */
-    TYPE_INPUT_TIME_STABILIZATION           ,
-    TYPE_SCALE_HOT_REJECTION,
-    TYPE_SCALE_COOL_REJECTION,
+    TYPE_SWITCH_OSD_INDEX,
+    TYPE_LIST_TEMP_UNIT_INDEX,
+    TYPE_LIST_SKY_CONDITION_INDEX,
+    TYPE_LIST_HUMIDITY_INDEX,
+    TYPE_INT_AIR_TEMP_INDEX,
+    TYPE_SCALE_SUB_EMISS_INDEX,
+    TYPE_INPUT_SUB_RANGE_INDEX,
     
-    /*!< Alarm */
-    TYPE_LIST_ALARM_MODE                    ,
-    TYPE_SCALE_ALARM_ABOVE,
-    TYPE_SCALE_ALARM_BELOW,
-    TYPE_LIST_ALARM_COLOR,
-    
-    /*!< IMAGE & VIDEO SETTING*/
-    
-    
-    /*!< GIMBAL SETTING: Temporary */
-    TYPE_LIST_AXIS_SETTING_INDEX            ,
+    /*!< GIMBAL SETTING */
+    TYPE_LIST_AXIS_SETTING_INDEX            = 15,
     TYPE_INPUT_BOX_STIFFNESS_INDEX,
     TYPE_INPUT_BOX_HOLDSTRENGTH_INDEX,
     TYPE_INPUT_GYROFILTER_INDEX,
@@ -97,25 +93,24 @@ static bool s_isWidgetFileDirPathConfigured = false;
 static char s_widgetFileDirPath[DJI_FILE_PATH_SIZE_MAX] = {0};
 
 static const T_DjiWidgetHandlerListItem s_widgetHandlerList[] = {
-    
-    {TYPE_LIST_MAIN_LAYOUT_INDEX,       DJI_WIDGET_TYPE_LIST,          DjiTestWidget_SetWidgetValue,      DjiTestWidget_GetWidgetValue, NULL},
-    {TYPE_SWITCH_MAIN_CAMERA_INDEX,     DJI_WIDGET_TYPE_SWITCH,        DjiTestWidget_SetWidgetValue,      DjiTestWidget_GetWidgetValue, NULL},
-    {TYPE_SCALE_THERMAL_IMAGE_OPACITY,  DJI_WIDGET_TYPE_SCALE,         DjiTestWidget_SetWidgetValue,     DjiTestWidget_GetWidgetValue, NULL},
-    {TYPE_SWITCH_GIMBAL_MOTOR_CONTROL,  DJI_WIDGET_TYPE_SWITCH,         DjiTestWidget_SetWidgetValue,     DjiTestWidget_GetWidgetValue, NULL},
-//    {TYPE_INT_PITCH_DOWN_INDEX,         DJI_WIDGET_TYPE_INT_INPUT_BOX, DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
+    {TYPE_LIST_MAIN_LAYOUT_INDEX,       DJI_WIDGET_TYPE_LIST,          DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
+    {TYPE_BUTTON_FFC_INDEX,             DJI_WIDGET_TYPE_BUTTON,        DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
+    {TYPE_SWITCH_MSX_INDEX,             DJI_WIDGET_TYPE_SWITCH,        DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
+    {TYPE_MSX_LENGTH_INDEX,             DJI_WIDGET_TYPE_SCALE,         DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
     
     {TYPE_LIST_PALETTE_INDEX,           DJI_WIDGET_TYPE_LIST,          DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
+    {TYPE_LIST_SCENE_INDEX,             DJI_WIDGET_TYPE_LIST,          DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
+    {TYPE_LIST_FILE_FORMAT_INDEX,       DJI_WIDGET_TYPE_LIST,          DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
+    {TYPE_LIST_VIDEO_TYPE_INDEX,        DJI_WIDGET_TYPE_LIST,          DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
     
-    {TYPE_INPUT_TIME_STABILIZATION,     DJI_WIDGET_TYPE_INT_INPUT_BOX, DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
-    {TYPE_SCALE_HOT_REJECTION,          DJI_WIDGET_TYPE_SCALE,         DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
-    {TYPE_SCALE_COOL_REJECTION,         DJI_WIDGET_TYPE_SCALE,         DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
-    
-    
-    {TYPE_LIST_ALARM_MODE,              DJI_WIDGET_TYPE_LIST,          DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
-    {TYPE_SCALE_ALARM_ABOVE,            DJI_WIDGET_TYPE_SCALE,         DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
-    {TYPE_SCALE_ALARM_BELOW,            DJI_WIDGET_TYPE_SCALE,         DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
-    {TYPE_LIST_ALARM_COLOR,             DJI_WIDGET_TYPE_LIST,          DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
-    
+    {TYPE_SWITCH_OSD_INDEX,             DJI_WIDGET_TYPE_SWITCH,        DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
+    {TYPE_LIST_TEMP_UNIT_INDEX,         DJI_WIDGET_TYPE_LIST,          DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
+    {TYPE_LIST_SKY_CONDITION_INDEX,     DJI_WIDGET_TYPE_LIST,          DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
+    {TYPE_LIST_HUMIDITY_INDEX,          DJI_WIDGET_TYPE_LIST,          DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
+    {TYPE_INT_AIR_TEMP_INDEX,           DJI_WIDGET_TYPE_INT_INPUT_BOX, DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
+    {TYPE_SCALE_SUB_EMISS_INDEX,        DJI_WIDGET_TYPE_SCALE,         DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
+    {TYPE_INPUT_SUB_RANGE_INDEX,        DJI_WIDGET_TYPE_INT_INPUT_BOX, DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
+
     /*!< Gremsy define in configure interface*/
     {TYPE_LIST_AXIS_SETTING_INDEX,      DJI_WIDGET_TYPE_LIST,          DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
     {TYPE_INPUT_BOX_STIFFNESS_INDEX,    DJI_WIDGET_TYPE_INT_INPUT_BOX, DjiTestWidget_SetWidgetValue,    DjiTestWidget_GetWidgetValue, NULL},
@@ -137,6 +132,7 @@ static const char *s_widgetTypeNameArray[] = {
 static const uint32_t s_widgetHandlerListCount = sizeof(s_widgetHandlerList) / sizeof(T_DjiWidgetHandlerListItem);
 static int32_t s_widgetValueList[sizeof(s_widgetHandlerList) / sizeof(T_DjiWidgetHandlerListItem)] = {0};
 
+static uint8_t s_axisSetting = DJI_GIMBAL_AXIS_PITCH;
 static T_LedCommonHandler s_ledHandler;
 
 /* Exported functions definition ---------------------------------------------*/
@@ -379,185 +375,204 @@ static T_DjiReturnCode DjiTestWidget_SetWidgetValue(E_DjiWidgetType widgetType, 
     USER_LOG_INFO("Set widget value, widgetType = %s, widgetIndex = %d ,widgetValue = %d",
                   s_widgetTypeNameArray[widgetType], index, value);
     s_widgetValueList[index] = value;
-    
     switch(index)
     {
-        /*!< Main Interface */
-//        case TYPE_INT_PITCH_DOWN_INDEX:
-//        {
-////            GremsyGMB_SetMappingAngle(value);
-//            break;
-//        }
-        
         case TYPE_LIST_MAIN_LAYOUT_INDEX:
         {
             /*!< Update for wiris information */
-            WIRISCamera->layout = value;
+            FLIRCamera->videoTransmission = (E_FlirVideoTransmision)value;
             
             /*!< Set event camera layout */
             Dji_CameraSetEvent(CAM_EVENT_SET_LAYOUT);
             break;
         }
-        case TYPE_SWITCH_MAIN_CAMERA_INDEX:
+        case TYPE_BUTTON_FFC_INDEX: 
         {
-            /*!< Update for wiris information */
-            WIRISCamera->mainCam = value;
+            FLIRCamera->commandFFC = value;
             
+            Dji_CameraSetEvent(CAM_EVENT_SET_DIGICAM_CONTROL);
+            
+            break;
+        }
+        case TYPE_SWITCH_MSX_INDEX:
+        {
+            /*!< Set MSX == true but needs to check MSX length */
+            if(value == 1 && FLIRCamera->MSXLength > 0) {
+                FLIRCamera->isMSXEnable = 1;
+            } 
+            else {
+                FLIRCamera->isMSXEnable = 0;
+            }
+            
+            USER_LOG_INFO("length: %d %d", FLIRCamera->MSXLength, FLIRCamera->isMSXEnable);
+
             /*!< Set event camera layout */
-            Dji_CameraSetEvent(CAM_EVENT_SET_MAINCAM);
+            Dji_CameraSetEvent(CAM_EVENT_SET_DIGICAM_CONFIG);
+            break;
+        }
+        case TYPE_MSX_LENGTH_INDEX:
+        {
+            /*!< Get MSX length value */
+            FLIRCamera->MSXLength = value;
+            
+            if(FLIRCamera->MSXLength == 0) {
+                FLIRCamera->isMSXEnable = 0;
+            }
+            
+            /*!< Set event to camera */
+            Dji_CameraSetEvent(CAM_EVENT_SET_DIGICAM_CONFIG);
 
             break;
         }
         case TYPE_LIST_PALETTE_INDEX:
         {
-            if(value > WIRIS_PALETTE_COUNT_MAX ) {
-                WIRISCamera->paletteIdx = WIRIS_PALETTE_01_GRAY;
-            } else if(value < WIRIS_PALETTE_01_GRAY) {
-                WIRISCamera->paletteIdx = WIRIS_PALETTE_01_GRAY;
+            if(value > FLIR_PALETTE_MAX_COUNT ) {
+                FLIRCamera->palette = FLIR_PATETTE_RAINBOW;
+            } else if(value < FLIR_PATETTE_WHITEHOT) {
+                FLIRCamera->palette = FLIR_PATETTE_RAINBOW;
             }
             else {
-                WIRISCamera->paletteIdx = value;
+                FLIRCamera->palette = value;
             }
             
            /*!< Set event camera  */
-            Dji_CameraSetEvent(CAM_EVENT_SET_PALETTE);
+            Dji_CameraSetEvent(CAM_EVENT_SET_DIGICAM_CONFIG);
             
             break;
         }
-        case TYPE_INPUT_TIME_STABILIZATION:
+        case TYPE_LIST_SCENE_INDEX:
         {
-            WIRISCamera->timeStabilization = (float)(value / 10.0f);
-            
-            if(WIRISCamera->timeStabilization > TIME_STATBILIZATION_MAX) {
-                WIRISCamera->timeStabilization = TIME_STATBILIZATION_MAX;
-            }  
-  
-            /*!< Set event camera  */
-            Dji_CameraSetEvent(CAM_EVENT_SET_TIME_STABI);
-            
-            break;
-        }
-        case TYPE_SCALE_HOT_REJECTION:
-        {
-            WIRISCamera->hotRejection = (float)(value / 10.0f);
-            
-            /*!< Check limit max for hot rejection */
-            if(WIRISCamera->hotRejection > HOT_COOL_REJECTION_PERCENT_MAX) {
-                WIRISCamera->hotRejection = HOT_COOL_REJECTION_PERCENT_MAX;
-            }
+            /*!< Get scene value */
+            FLIRCamera->scene = value;
             
             /*!< Set event camera  */
-            Dji_CameraSetEvent(CAM_EVENT_SET_HOT_REJECT);
-            
-            /*!< Set event to get data */
+            Dji_CameraSetEvent(CAM_EVENT_SET_DIGICAM_CONFIG);
             break;
         }
-        case TYPE_SCALE_COOL_REJECTION:
+        case TYPE_LIST_FILE_FORMAT_INDEX:
         {
-            WIRISCamera->coolRejection = (float)(value / 10.0f);
-            
-             /*!< Check limit max for hot rejection */
-            if(WIRISCamera->coolRejection > HOT_COOL_REJECTION_PERCENT_MAX) {
-                WIRISCamera->coolRejection = HOT_COOL_REJECTION_PERCENT_MAX;
+            if(value == 0){
+                FLIRCamera->fileFormat = FLIR_FILE_FORMART_JPEG_TIFF;
+            } else if(value == 1) {
+                FLIRCamera->fileFormat = FLIR_FILE_FORMART_FFF;
             }
+            
+            USER_LOG_WARN("Set widget file format :%d", FLIRCamera->fileFormat);
+            break;
+        }
+        case TYPE_LIST_VIDEO_TYPE_INDEX:
+        {
+            if(value == 0 ){
+                FLIRCamera->videoFileType = FLIR_VIDEO_FILE_TYPE_H264;
+            } else if(value == 1) {
+                FLIRCamera->videoFileType = FLIR_VIDEO_FILE_TYPE_TLFF;
+            }
+            break;
+        }
+        case TYPE_SWITCH_OSD_INDEX:
+        {
+            FLIRCamera->spotMeter = value;
             
             /*!< Set event camera  */
-            Dji_CameraSetEvent(CAM_EVENT_SET_COOL_REJECT);
+            Dji_CameraSetEvent(CAM_EVENT_SET_PARMETERS);
             break;
         }
-        case TYPE_SCALE_THERMAL_IMAGE_OPACITY:
+        case TYPE_LIST_TEMP_UNIT_INDEX:
         {
-            /*!<  Sets thermal camera transprancy in PIP Fusion layout from 10 to 100 in percent*/
-            if(value < THERMAL_CAMERA_TRANSPARENCY_MIN) {
-                value = THERMAL_CAMERA_TRANSPARENCY_MIN;
-            } else if (value > THERMAL_CAMERA_TRANSPARENCY_MAX) {
-                value = THERMAL_CAMERA_TRANSPARENCY_MAX;
-            } else {
-                WIRISCamera->transparency = value;
-                
-                /*!< Set event camera  */
-                Dji_CameraSetEvent(CAM_EVENT_SET_OPACITY);
-            }
-            
-            break;
-        }
-        case TYPE_SWITCH_GIMBAL_MOTOR_CONTROL:
-        {
-            if(GremsyGMB_IsPresent()){
-                if(s_widgetValueList[index] == 1){
-                    GremsyGMB_SetGimbalOn();
-                    USER_LOG_INFO("Set Gimbal On");
-                }else{
-                    GremsyGMB_SetGimbalOff();
-                    USER_LOG_INFO("Set Gimbal Off");
-                }
-            }
-            
-            break;
-        }
-        case TYPE_LIST_ALARM_MODE:
-        {
-            WIRISCamera->alarmMode = value;
+            FLIRCamera->tempUnit = value;
             
             /*!< Set event camera  */
-            Dji_CameraSetEvent(CAM_EVENT_SET_ALARM_MODE);
-
+            Dji_CameraSetEvent(CAM_EVENT_SET_PARMETERS);
             break;
         }
         
-        case TYPE_SCALE_ALARM_ABOVE: 
+        case TYPE_LIST_SKY_CONDITION_INDEX:
         {
-            if(WIRISCamera->alarmMode != WIRIS_ALARM_MODE_OFF) {
-                WIRISCamera->thresholdAbove = value;
-                
-                if(WIRISCamera->thresholdAbove > ALARM_THRESHOLD_MAX_PERCENT) {
-                    WIRISCamera->thresholdAbove = ALARM_THRESHOLD_MAX_PERCENT;
-                } 
-                
-                /*!< Set event camera  */
-                Dji_CameraSetEvent(CAM_EVENT_SET_ALARM_VALUE);
+            if(value == 0) {
+                FLIRCamera->skyCondition = FLIR_CLEAR_SKIES;
+            } else if( value == 1) {
+                FLIRCamera->skyCondition = FLIR_SCATTERED_SKIES;
+            } else if( value == 2) {
+                FLIRCamera->skyCondition = FLIR_CLOUDY_SKIES;
             }
-            break;
-        }
-        case TYPE_SCALE_ALARM_BELOW:
-        {
-            if(WIRISCamera->alarmMode != WIRIS_ALARM_MODE_OFF) {
-                WIRISCamera->thresholdBelow = value;
-                
-                if(WIRISCamera->thresholdBelow > ALARM_THRESHOLD_MAX_PERCENT) {
-                    WIRISCamera->thresholdBelow = ALARM_THRESHOLD_MAX_PERCENT;
-                } 
-                
-                 /*!< Set event camera  */
-                Dji_CameraSetEvent(CAM_EVENT_SET_ALARM_VALUE);
-            }
-            
-            break;
-        }
-        case TYPE_LIST_ALARM_COLOR:
-        {
-            WIRISCamera->alarmColor = value;
             
             /*!< Set event camera  */
-            Dji_CameraSetEvent(CAM_EVENT_SET_ALARM_COLOR);
+            Dji_CameraSetEvent(CAM_EVENT_SET_PARMETERS);
+            
+            break;
+        }
+        case TYPE_LIST_HUMIDITY_INDEX:
+        {
+            if(value == 0) {
+                FLIRCamera->humidity = HUMIDITY_LOW_30;
+            } else if( value == 1) {
+                FLIRCamera->humidity = HUMIDITY_MEDIUM_45;
+            } else if( value == 2) {
+                FLIRCamera->humidity = HUMIDITY_HIGH_60;
+            }
+            
+            /*!< Set event camera  */
+            Dji_CameraSetEvent(CAM_EVENT_SET_PARMETERS);
+            
+            break;
+        }
+        case TYPE_INT_AIR_TEMP_INDEX:
+        {
+            if(value < -50) {
+                FLIRCamera->airTemperature = -50;
+            } else if(value > 40) {
+                FLIRCamera->airTemperature = 40;
+            } else {
+                FLIRCamera->airTemperature = value;
+            }
+            
+            /*!< Set event camera  */
+            Dji_CameraSetEvent(CAM_EVENT_SET_PARMETERS);
+            
+            break;
+        }
+        case TYPE_SCALE_SUB_EMISS_INDEX:
+        {
+            if(value < 50) {
+                value = 50;
+            }
+            FLIRCamera->emissivity = value;
+            
+            /*!< Set event camera  */
+            Dji_CameraSetEvent(CAM_EVENT_SET_PARMETERS);
+            break;
+        }
+        case TYPE_INPUT_SUB_RANGE_INDEX:
+        {
+            if(value > 200) {
+                FLIRCamera->subjectRange = 200;
+            } else if(value < 0) {
+                FLIRCamera->subjectRange = 0;
+            } else {
+                FLIRCamera->subjectRange = value;
+            }
+            
+            Dji_CameraSetEvent(CAM_EVENT_SET_PARMETERS);
             break;
         }
         case TYPE_LIST_AXIS_SETTING_INDEX:
         {
+            /*!< Get index specifies the axis setting*/
+            s_axisSetting = (E_DjiGimbalAxis)value;
             break;
         }
         case TYPE_INPUT_BOX_STIFFNESS_INDEX:
         {
             /*!< Check if seting for pitch*/
-            if(s_widgetValueList[TYPE_LIST_AXIS_SETTING_INDEX] == 0) {
+            if(s_axisSetting == DJI_GIMBAL_AXIS_PITCH) {
                 GremsyGMB_SetPitchStiffness(value);
-            } 
+            }
             /*!< Check if setting for roll*/
-            else if(s_widgetValueList[TYPE_LIST_AXIS_SETTING_INDEX] == 1) {
+            else if(s_axisSetting == DJI_GIMBAL_AXIS_ROLL) {
                 GremsyGMB_SetRollStiffness(value);
             }
             /*!< Check if setting for yaw*/
-            else if(s_widgetValueList[TYPE_LIST_AXIS_SETTING_INDEX] == 2) {
+            else if(s_axisSetting == DJI_GIMBAL_AXIS_YAW) {
                 GremsyGMB_SetYawStiffness(value);
             }
             else {
@@ -568,15 +583,15 @@ static T_DjiReturnCode DjiTestWidget_SetWidgetValue(E_DjiWidgetType widgetType, 
         case TYPE_INPUT_BOX_HOLDSTRENGTH_INDEX:
         {
             /*!< Check if seting for pitch*/
-            if(s_widgetValueList[TYPE_LIST_AXIS_SETTING_INDEX] == 0) {
+            if(s_axisSetting == DJI_GIMBAL_AXIS_PITCH) {
                 GremsyGMB_SetPitchHoldStrength(value);
             } 
             /*!< Check if setting for roll*/
-            else if(s_widgetValueList[TYPE_LIST_AXIS_SETTING_INDEX] == 1) {
+            else if(s_axisSetting == DJI_GIMBAL_AXIS_ROLL) {
                 GremsyGMB_SetRollHoldStrength(value);
             }
             /*!< Check if setting for yaw*/
-            else if(s_widgetValueList[TYPE_LIST_AXIS_SETTING_INDEX] == 2) {
+            else if(s_axisSetting == DJI_GIMBAL_AXIS_YAW) {
                 GremsyGMB_SetYawHoldStrength(value);
             }
             else {
@@ -586,19 +601,19 @@ static T_DjiReturnCode DjiTestWidget_SetWidgetValue(E_DjiWidgetType widgetType, 
         }
         case TYPE_INPUT_GYROFILTER_INDEX:
         {
+            /*!< Set gyro filter */
             GremsyGMB_SetGyroFilter(value);
-            
             break;
         }
         case TYPE_INPUT_OUTPUTFILTER_INDEX:
         {
+            /*!< Set gimbal output Filter */
             GremsyGMB_SetOutputFilter(value);
             break;
         }
         case TYPE_BUTTON_GMB_REBOOT_INDEX:
         {
-//            GremsyGMB_SetReboot();
-            
+            /*!< Reboot gimbal */
             PsdkSom_WriteHardwareResetPin(SOM_HW_RESET_MANAGEMENT_PIN_STATE_RESET);
             osalHandler->TaskSleepMs(20);
             PsdkSom_WriteHardwareResetPin(SOM_HW_RESET_MANAGEMENT_PIN_STATE_SET);
@@ -612,7 +627,7 @@ static T_DjiReturnCode DjiTestWidget_SetWidgetValue(E_DjiWidgetType widgetType, 
         default:
             break;
     }
-
+    
     return DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS;
 }
 
@@ -624,130 +639,201 @@ static T_DjiReturnCode DjiTestWidget_GetWidgetValue(E_DjiWidgetType widgetType, 
     
     switch(index)
     {
-//        /*!< Main Interface */
-//        case TYPE_INT_PITCH_DOWN_INDEX:
-//        {
-//            GremsyGMB_GetMappingAngle((int8_t*)value);
-//            break;
-//        }
         case TYPE_LIST_MAIN_LAYOUT_INDEX:
         {
-            /*!< Get */
-            s_widgetValueList[index] = WIRISCamera->layout;
+            /*!< Update for wiris information */
+            *value = (int32_t)FLIRCamera->videoTransmission;
             
             break;
         }
-        case TYPE_SWITCH_MAIN_CAMERA_INDEX:
+        case TYPE_BUTTON_FFC_INDEX: 
         {
-            s_widgetValueList[index] = WIRISCamera->mainCam;
+            *value = (int32_t)FLIRCamera->commandFFC;
+            
+            break;
+        }
+        case TYPE_SWITCH_MSX_INDEX:
+        {
+            if(FLIRCamera->MSXLength == 0) {
+                *value = 0;
+            }
+            else {
+                *value = FLIRCamera->isMSXEnable;
+            }
+
+            break;
+        }
+        case TYPE_MSX_LENGTH_INDEX:
+        {
+            /*!< Get MSX length value */
+            *value = FLIRCamera->MSXLength;
+         
+            if(FLIRCamera->MSXLength ==0 ) {
+                FLIRCamera->isMSXEnable = 0;
+            }
             break;
         }
         case TYPE_LIST_PALETTE_INDEX:
         {
-            s_widgetValueList[index] = WIRISCamera->paletteIdx;
+            *value = FLIRCamera->palette;
+            
             break;
         }
-        case TYPE_INPUT_TIME_STABILIZATION:
+        case TYPE_LIST_SCENE_INDEX:
         {
-            /*!< Get time stabilization */
-            s_widgetValueList[index] = WIRISCamera->timeStabilization*10;
+            /*!< Get scene value */
+            *value = FLIRCamera->scene;
+            
             break;
         }
-        case TYPE_SCALE_HOT_REJECTION:
+        case TYPE_LIST_FILE_FORMAT_INDEX:
         {
-            /*!< Get hot rejection */
-            s_widgetValueList[index] = WIRISCamera->hotRejection*10;
+            static int32_t fileFormat = 0;
+            
+            if(FLIRCamera->fileFormat == FLIR_FILE_FORMART_JPEG_TIFF) {
+                fileFormat = 0;
+            } 
+            else if(FLIRCamera->fileFormat == FLIR_FILE_FORMART_FFF) {
+                fileFormat= 1;
+            }
+            
+            *value = fileFormat;
+            
             break;
         }
-        case TYPE_SCALE_COOL_REJECTION:
+        case TYPE_LIST_VIDEO_TYPE_INDEX:
         {
-            /*!< Get cool rejection */
-            s_widgetValueList[index] = WIRISCamera->coolRejection*10;
+            static int32_t videoFileType = 0;
+            
+            if(FLIRCamera->videoFileType == FLIR_VIDEO_FILE_TYPE_H264) {
+                videoFileType = 0;
+            } 
+            else if(FLIRCamera->videoFileType == FLIR_VIDEO_FILE_TYPE_TLFF) {
+                videoFileType = 1;
+            }
+            
+            *value = videoFileType;
             break;
         }
-        case TYPE_SCALE_THERMAL_IMAGE_OPACITY:
+        
+        case TYPE_SWITCH_OSD_INDEX:
         {
-            /*!< Get opacity */
-            s_widgetValueList[index] = WIRISCamera->transparency;
+            *value = FLIRCamera->spotMeter;
+            
             break;
         }
-        case TYPE_SWITCH_GIMBAL_MOTOR_CONTROL:
+        case TYPE_LIST_TEMP_UNIT_INDEX:
         {
-            if(GremsyGMB_IsPresent()){
-                GremsyGMB_IsRunning((uint8_t*)&s_widgetValueList[index]);
+            *value = FLIRCamera->tempUnit;
+            
+            break;
+        }
+        case TYPE_LIST_SKY_CONDITION_INDEX:
+        {
+            
+            if(FLIRCamera->skyCondition == FLIR_CLEAR_SKIES) {
+                *value = 0;
+            } 
+            else if( FLIRCamera->skyCondition == FLIR_SCATTERED_SKIES) {
+                *value = 1;
+            } 
+            else if( FLIRCamera->skyCondition == FLIR_CLOUDY_SKIES) {
+                *value = 2;
             }
             break;
         }
-        case TYPE_LIST_ALARM_MODE:
+      
+        case TYPE_LIST_HUMIDITY_INDEX:
         {
-            /*!< Get alarm mode */
-            s_widgetValueList[index] = WIRISCamera->alarmMode;
+            if(FLIRCamera->humidity == HUMIDITY_LOW_30) {
+                *value = 0;
+            }
+            else if(FLIRCamera->humidity == HUMIDITY_MEDIUM_45) {
+                *value = 1;
+            }
+            else if(FLIRCamera->humidity == HUMIDITY_HIGH_60) {
+                *value = 2;
+            }
+
+            break;
+        }
+        case TYPE_INT_AIR_TEMP_INDEX:
+        {
+            if(FLIRCamera->airTemperature < -50) {
+                FLIRCamera->airTemperature = -50;
+            } else if(FLIRCamera->airTemperature > 40) {
+                FLIRCamera->airTemperature = 40;
+            } 
+            
+            *value = (int32_t)FLIRCamera->airTemperature;
+
+            break;
+        }
+        case TYPE_SCALE_SUB_EMISS_INDEX:
+        {
+            if(FLIRCamera->emissivity < 50) {
+                FLIRCamera->emissivity = 50;
+            }
+            
+            *value = (int32_t)FLIRCamera->emissivity;
             
             break;
         }
         
-        case TYPE_SCALE_ALARM_ABOVE:
+        case TYPE_INPUT_SUB_RANGE_INDEX:
         {
-            s_widgetValueList[TYPE_SCALE_ALARM_ABOVE] = WIRISCamera->thresholdAbove;
-            break;
-        }
-        case TYPE_SCALE_ALARM_BELOW:
-        {
-            s_widgetValueList[TYPE_SCALE_ALARM_BELOW] = WIRISCamera->thresholdBelow;
+            if(FLIRCamera->subjectRange > 200) {
+                FLIRCamera->subjectRange = 200;
+            } 
             
-            break;
-        }
-        case TYPE_LIST_ALARM_COLOR:
-        {
-            s_widgetValueList[index] = WIRISCamera->alarmColor;
+            *value = (int32_t)FLIRCamera->subjectRange;
+
             break;
         }
         
         case TYPE_LIST_AXIS_SETTING_INDEX:
         {
+            *value = s_axisSetting;
             break;
         }
         case TYPE_INPUT_BOX_STIFFNESS_INDEX:
         {
             /*!< Check if seting for pitch*/
-            if(s_widgetValueList[TYPE_LIST_AXIS_SETTING_INDEX] == 0) {
+            if(s_axisSetting == DJI_GIMBAL_AXIS_PITCH) {
                 GremsyGMB_GetPitchStiffness((uint8_t*)value);
             } 
             /*!< Check if setting for roll*/
-            else if(s_widgetValueList[TYPE_LIST_AXIS_SETTING_INDEX] == 1) {
+            else if(s_axisSetting == DJI_GIMBAL_AXIS_ROLL) {
                 GremsyGMB_GetRollStiffness((uint8_t*)value);
             }
             /*!< Check if setting for yaw*/
-            else if(s_widgetValueList[TYPE_LIST_AXIS_SETTING_INDEX] == 2) {
+            else if(s_axisSetting == DJI_GIMBAL_AXIS_YAW) {
                 GremsyGMB_GetYawStiffness((uint8_t*)value);
             }
             else {
                 USER_LOG_ERROR("Invalid Stiffness");
             }
             
-            s_widgetValueList[index] = *value;
             break;
         }
         
         case TYPE_INPUT_BOX_HOLDSTRENGTH_INDEX:
         {
             /*!< Check if seting for pitch*/
-            if(s_widgetValueList[TYPE_LIST_AXIS_SETTING_INDEX] == 0) {
+            if(s_axisSetting == DJI_GIMBAL_AXIS_PITCH) {
                 GremsyGMB_GetPitchHoldStrength((uint8_t*)value);
             } 
             /*!< Check if setting for roll*/
-            else if(s_widgetValueList[TYPE_LIST_AXIS_SETTING_INDEX] == 1) {
+            else if(s_axisSetting == DJI_GIMBAL_AXIS_ROLL) {
                 GremsyGMB_GetRollHoldStrength((uint8_t*)value);
             }
             /*!< Check if setting for yaw*/
-            else if(s_widgetValueList[TYPE_LIST_AXIS_SETTING_INDEX] == 2) {
+            else if(s_axisSetting == DJI_GIMBAL_AXIS_YAW) {
                 GremsyGMB_GetYawHoldStrength((uint8_t*)value);
             }
             else {
                 USER_LOG_ERROR("Invalid HoldStrength");
             }
-            
-            s_widgetValueList[index] = *value;
             
             break;
         }
@@ -756,8 +842,6 @@ static T_DjiReturnCode DjiTestWidget_GetWidgetValue(E_DjiWidgetType widgetType, 
             /*!< Get gimbal Gyro Filter */
             GremsyGMB_GetGyroFilter((uint8_t*)value);
             
-            s_widgetValueList[index] = *value;
-            
             break;
         }
         case TYPE_INPUT_OUTPUTFILTER_INDEX:
@@ -765,15 +849,11 @@ static T_DjiReturnCode DjiTestWidget_GetWidgetValue(E_DjiWidgetType widgetType, 
             /*!< Get gimbal Output  Filter */
             GremsyGMB_GetOutputFilter((uint8_t*)value);
             
-            s_widgetValueList[index] = *value;
             break;
         }
         default:
             break;
     }
-    
-    /*!< Set value from the value list*/
-    *value = s_widgetValueList[index];
 
     return DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS;
 }

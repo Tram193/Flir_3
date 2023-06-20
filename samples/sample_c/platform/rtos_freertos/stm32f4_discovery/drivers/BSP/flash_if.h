@@ -101,6 +101,10 @@ enum {
 #define APPLICATION_PARAM_STORE_ADDRESS     ADDR_FLASH_SECTOR_2
 #define APPLICATION_PARAM_STORE_ADDRESS_END (ADDR_FLASH_SECTOR_4 - 1)
 
+/* Define the address for param store */
+#define CAMERA_PARAM_STORE_ADDRESS           ADDR_FLASH_SECTOR_3
+#define CAMERA_PARAM_STORE_ADDRESS_END      (ADDR_FLASH_SECTOR_4 - 1)
+
 /* Define bitmap representing user flash area that could be write protected (check restricted to pages 8-39). */
 #define FLASH_SECTOR_TO_BE_PROTECTED (OB_WRP_SECTOR_0 | OB_WRP_SECTOR_1 | OB_WRP_SECTOR_2 | OB_WRP_SECTOR_3 |\
                                       OB_WRP_SECTOR_4 | OB_WRP_SECTOR_5 | OB_WRP_SECTOR_6 | OB_WRP_SECTOR_7 |\

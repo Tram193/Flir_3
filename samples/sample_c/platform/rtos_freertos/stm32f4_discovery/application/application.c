@@ -179,7 +179,7 @@ void DjiUser_StartTask(void const *argument)
         goto out;
     }
 
-    returnCode = DjiCore_SetAlias("PixyWS");
+    returnCode = DjiCore_SetAlias("PixyF");
     if (returnCode != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
         USER_LOG_ERROR("set alias error");
         goto out;

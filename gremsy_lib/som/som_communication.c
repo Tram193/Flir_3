@@ -35,7 +35,7 @@
 /// Include camera emu interface
 #include "camera_emu/test_payload_cam_emu_base.h"
 /* Private define------------------------------------------------------------------------------*/
-#define SOM_COMM_DEBUG 0
+#define SOM_COMM_DEBUG 1
 
 #if SOM_COMM_DEBUG
 # define DebugMsg(fmt, args ...) do {USER_LOG_DEBUG("[%s]:[%d]: " fmt "\n", __FUNCTION__, __LINE__, ## args); } while(0);

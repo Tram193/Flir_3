@@ -336,12 +336,12 @@ static void *DjiTest_WidgetTask(void *arg)
         }
         
 #ifndef USER_FIRMWARE_MAJOR_VERSION
-//        uint32_t debug_heap_use = configTOTAL_HEAP_SIZE - xPortGetFreeHeapSize();
-//        snprintf(message, DJI_WIDGET_FLOATING_WINDOW_MSG_MAX_LEN, "System Status: %s\r\n%d\r\n"
-//                                                                , systemStatus
-//                                                                , debug_heap_use);
+        uint32_t debug_heap_use = configTOTAL_HEAP_SIZE - xPortGetFreeHeapSize();
+        snprintf(message, DJI_WIDGET_FLOATING_WINDOW_MSG_MAX_LEN, "System Status: %s\r\n%d\r\n"
+                                                                , systemStatus
+                                                                , debug_heap_use);
         
-        snprintf(message, DJI_WIDGET_FLOATING_WINDOW_MSG_MAX_LEN, "System Status: %s\r\n", systemStatus);
+//        snprintf(message, DJI_WIDGET_FLOATING_WINDOW_MSG_MAX_LEN, "System Status: %s\r\n", systemStatus);
 #else
         snprintf(message, DJI_WIDGET_FLOATING_WINDOW_MSG_MAX_LEN,
                  "System time : %u ms\r\nVersion: v%02d.%02d.%02d.%02d\r\nBuild time: %s %s", sysTimeMs,

@@ -37,16 +37,26 @@ extern "C" {
 
 /* Exported constants --------------------------------------------------------*/
 
-typedef struct _user_fc_subscription_t
+typedef struct _T_GeotagInfo
 {
-    T_DjiFcSubscriptionRtkPosition          RtkPosition;
-    T_DjiFcSubscriptionRTKConnectStatus     RTKConnectStatus;
-    T_DjiFcSubscriptionRtkVelocity          RtkVelocity;
-    T_DjiFcSubscriptionRtkYaw               RtkYaw;
-    T_DjiFcSubscriptionGpsSignalLevel       GpsSignalLeve;
-    T_DjiFcSubscriptionGpsDate              GpsDate;
-    T_DjiFcSubscriptionGpsTime              GpsTime;
-}user_fc_subscription_info_t;
+    
+    bool isNewData;
+    
+    T_DjiDataTimestamp                   timestamp;
+    T_DjiAttitude3d                      aircraftAttitude; // unit: 0.1 degree, ground coordination
+    T_DjiFcSubscriptionVelocity          aricraftVelocity;
+    
+    T_DjiFcSubscriptionGpsPosition       gpsPosition;
+    T_DjiFcSubscriptionPositionFused     positionFused;
+    T_DjiFcSubscriptionGpsVelocity       gpsVelocity;
+    /*!< Get info RTK */
+    T_DjiFcSubscriptionRtkPosition       rtkPosition;
+    T_DjiFcSubscriptionRtkVelocity       rtkVelocity;
+    T_DjiFcSubscriptionRtkYaw            rtkYaw;
+    T_DjiFcSubscriptionRtkPositionInfo   rtkPosInfo;
+} T_GeotagInfo;
+
+extern T_GeotagInfo geoTagInfo;
 /* Exported types ------------------------------------------------------------*/
 
 

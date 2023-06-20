@@ -33,6 +33,7 @@
 #include "dji_gimbal.h"
 #include "dji_xport.h"
 #include "gimbal_emu/test_payload_gimbal_emu.h"
+
 /*!< Include camera device*/
 #include "camera/gsdk_flir_camera.h"
 
@@ -1553,7 +1554,9 @@ T_DjiReturnCode DjiTest_CameraGetVideoStreamType(E_DjiCameraVideoStreamType *typ
 
 bool DjiTest_CameraIsInited(void)
 {
-    return s_isCamInited && (GremsyFLIR_isConnected());
+    bool camIsConnected = GremsyFLIR_isConnected();
+    
+    return s_isCamInited && camIsConnected;
 }
 
 T_DjiReturnCode Dji_CameraSetEvent(const uint32_t uxBitsToSet)

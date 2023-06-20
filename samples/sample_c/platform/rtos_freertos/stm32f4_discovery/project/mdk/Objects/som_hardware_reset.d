@@ -15,14 +15,14 @@
 .\objects\som_hardware_reset.o: ..\..\drivers\BSP\stm32f4xx_hal_conf.h
 .\objects\som_hardware_reset.o: ..\..\drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h
 .\objects\som_hardware_reset.o: ..\..\drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h
-.\objects\som_hardware_reset.o: C:\Users\Gremsy-KinhNguyen\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
-.\objects\som_hardware_reset.o: C:\Users\Gremsy-KinhNguyen\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h
+.\objects\som_hardware_reset.o: C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+.\objects\som_hardware_reset.o: C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h
 .\objects\som_hardware_reset.o: ..\..\drivers\CMSIS\Include\core_cm4.h
 .\objects\som_hardware_reset.o: ..\..\drivers\CMSIS\Include\cmsis_version.h
 .\objects\som_hardware_reset.o: ..\..\drivers\CMSIS\Include\cmsis_compiler.h
 .\objects\som_hardware_reset.o: ..\..\drivers\CMSIS\Include\cmsis_armcc.h
 .\objects\som_hardware_reset.o: ..\..\drivers\CMSIS\Include\mpu_armv7.h
-.\objects\som_hardware_reset.o: C:\Users\Gremsy-KinhNguyen\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
+.\objects\som_hardware_reset.o: C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
 .\objects\som_hardware_reset.o: ..\..\drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 .\objects\som_hardware_reset.o: ..\..\drivers\STM32F4xx_HAL_Driver\Inc\Legacy/stm32_hal_legacy.h
 .\objects\som_hardware_reset.o: ..\..\drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h

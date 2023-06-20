@@ -13,14 +13,14 @@
 .\objects\upgrade_platform_opt_stm32.o: ..\..\drivers\BSP\stm32f4xx_hal_conf.h
 .\objects\upgrade_platform_opt_stm32.o: ..\..\drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h
 .\objects\upgrade_platform_opt_stm32.o: ..\..\drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h
-.\objects\upgrade_platform_opt_stm32.o: C:\Users\Gremsy-KinhNguyen\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
-.\objects\upgrade_platform_opt_stm32.o: C:\Users\Gremsy-KinhNguyen\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h
+.\objects\upgrade_platform_opt_stm32.o: C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+.\objects\upgrade_platform_opt_stm32.o: C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h
 .\objects\upgrade_platform_opt_stm32.o: ..\..\drivers\CMSIS\Include\core_cm4.h
 .\objects\upgrade_platform_opt_stm32.o: ..\..\drivers\CMSIS\Include\cmsis_version.h
 .\objects\upgrade_platform_opt_stm32.o: ..\..\drivers\CMSIS\Include\cmsis_compiler.h
 .\objects\upgrade_platform_opt_stm32.o: ..\..\drivers\CMSIS\Include\cmsis_armcc.h
 .\objects\upgrade_platform_opt_stm32.o: ..\..\drivers\CMSIS\Include\mpu_armv7.h
-.\objects\upgrade_platform_opt_stm32.o: C:\Users\Gremsy-KinhNguyen\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
+.\objects\upgrade_platform_opt_stm32.o: C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
 .\objects\upgrade_platform_opt_stm32.o: ..\..\drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
 .\objects\upgrade_platform_opt_stm32.o: ..\..\drivers\STM32F4xx_HAL_Driver\Inc\Legacy/stm32_hal_legacy.h
 .\objects\upgrade_platform_opt_stm32.o: ..\..\drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h

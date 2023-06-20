@@ -49,7 +49,7 @@
 #include <stdio.h>
 
 /*!< Get data for geotagging */
-//#include "test_fc_subscription.h"
+#include "fc_subscription/test_fc_subscription.h"
 
 #include <flash_if.h>
 
@@ -325,7 +325,7 @@ T_DjiReturnCode GsdkFlir_GetParams(T_FlirParamters *params)
  * @details 
  * @note 
  */
-static bool GremsyFLIR_isConnected(void )
+bool GremsyFLIR_isConnected(void )
 {
     uint32_t tnow_ms = 0;
     T_DjiOsalHandler *osalHandler = DjiPlatform_GetOsalHandler();

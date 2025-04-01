@@ -199,7 +199,7 @@ T_DjiReturnCode SomComm_SendHeatbeat(void)
         // Send via MAVLINK_SEND_UART_BYTES 
         SomComm_SendDataFrame(msgbuf, len);
         
-        DebugInfo(" Sending HB :%d", len);
+     //   DebugInfo(" Sending HB :%d", len);
     }
     else {
         DebugError("Invalid length of packet");
@@ -363,7 +363,7 @@ void SomComm_HandleMessage(const mavlink_message_t* msg)
             
             s_somStatus = packet.system_status;
             
-            DebugInfo("Got HB SOM: %d %d ", packet.type, s_somStatus);
+          //  DebugInfo("Got HB SOM: %d %d ", packet.type, s_somStatus);
                       
             /* Get time report from the gimbal device*/
             osalHandler->GetTimeMs(&s_lastReportMessageMs);
@@ -397,7 +397,7 @@ void SomComm_HandleMessage(const mavlink_message_t* msg)
         {
             mavlink_msg_onboard_computer_status_decode(msg, &s_onboardStatus);
             
-            DebugInfo("Temp :%d", s_onboardStatus.temperature_board);
+         //  DebugInfo("Temp :%d", s_onboardStatus.temperature_board);
             break;
         }
     }

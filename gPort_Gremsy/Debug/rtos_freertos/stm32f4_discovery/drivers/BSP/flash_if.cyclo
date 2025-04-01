@@ -1,0 +1,5 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/BSP/flash_if.c:70:10:FLASH_If_Erase	2
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/BSP/flash_if.c:117:10:FLASH_If_Write	8
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/BSP/flash_if.c:176:10:FLASH_If_GetWriteProtectionStatus	2
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/BSP/flash_if.c:209:17:GetSector	23
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/BSP/flash_if.c:247:19:FLASH_If_WriteProtectionConfig	1

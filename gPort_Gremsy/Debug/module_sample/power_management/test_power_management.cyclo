@@ -1,0 +1,4 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/power_management/test_power_management.c:51:17:DjiTest_RegApplyHighPowerHandler	3
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/power_management/test_power_management.c:75:17:DjiTest_PowerManagementStartService	13
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/power_management/test_power_management.c:136:17:DjiTest_PowerManagementStopService	2
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/power_management/test_power_management.c:150:24:DjiTest_PowerOffNotificationCallback	2

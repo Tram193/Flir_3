@@ -1,0 +1,4 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/time_sync/test_time_sync.c:54:17:DjiTest_TimeSyncRegHandler	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/time_sync/test_time_sync.c:71:17:DjiTest_TimeSyncStartService	40	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/time_sync/test_time_sync.c:115:17:DjiTest_TimeSyncGetNewestPpsTriggerLocalTimeUs	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/time_sync/test_time_sync.c:132:14:DjiTest_TimeSyncTask	112	static

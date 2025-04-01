@@ -1,0 +1,3 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/perception/test_perception.c:58:17:DjiTest_PerceptionRunSample	8
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/perception/test_perception.c:161:16:DjiTest_SaveImageData	5
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/perception/test_perception.c:185:13:DjiTest_PerceptionImageCallback	2

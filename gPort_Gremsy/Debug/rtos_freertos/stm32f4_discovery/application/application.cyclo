@@ -1,0 +1,4 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/application/application.c:81:6:DjiUser_StartTask	33
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/application/application.c:375:6:DjiUser_MonitorTask	2
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/application/application.c:464:24:DjiUser_FillInUserInfo	1
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/application/application.c:505:24:DjiUser_PrintConsole	1

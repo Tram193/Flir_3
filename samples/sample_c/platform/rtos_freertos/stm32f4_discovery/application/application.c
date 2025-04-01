@@ -451,8 +451,8 @@ void DjiUser_MonitorTask(void const *argument)
             lastTaskStatusArraySize = currentTaskStatusArraySize;
 #endif
         }
-        USER_LOG_INFO("Used heap size: %d/%d.\r\n", configTOTAL_HEAP_SIZE - xPortGetFreeHeapSize(),
-                      configTOTAL_HEAP_SIZE);
+      //  USER_LOG_INFO("Used heap size: %d/%d.\r\n", configTOTAL_HEAP_SIZE - xPortGetFreeHeapSize(),
+        //              configTOTAL_HEAP_SIZE);
     }
 }
 

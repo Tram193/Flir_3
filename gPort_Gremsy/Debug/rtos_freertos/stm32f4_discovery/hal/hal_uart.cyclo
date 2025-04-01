@@ -1,0 +1,5 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/hal/hal_uart.c:54:17:HalUart_Init	4
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/hal/hal_uart.c:75:17:HalUart_DeInit	1
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/hal/hal_uart.c:82:17:HalUart_WriteData	2
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/hal/hal_uart.c:98:17:HalUart_ReadData	2
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/hal/hal_uart.c:114:17:HalUart_GetStatus	3

@@ -1,0 +1,4 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/upgrade/test_upgrade_common_file_transfer.c:44:17:DjiTestCommonFileTransfer_Start	2
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/upgrade/test_upgrade_common_file_transfer.c:63:17:DjiTestCommonFileTransfer_Transfer	3
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/upgrade/test_upgrade_common_file_transfer.c:83:17:DjiTestCommonFileTransfer_Finish	4
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/upgrade/test_upgrade_common_file_transfer.c:114:24:DjiTestFile_GetUpgradeFileMd5	6

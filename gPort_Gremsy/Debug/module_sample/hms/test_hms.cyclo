@@ -1,0 +1,8 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/hms/test_hms.c:66:17:DjiTest_HmsRunSample	4
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/hms/test_hms.c:107:17:DjiTest_HmsStartService	3
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/hms/test_hms.c:179:24:DjiTest_HmsInit	4
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/hms/test_hms.c:206:24:DjiTest_HmsDeInit	3
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/hms/test_hms.c:224:40:DjiTest_GetValueOfFlightStatus	2
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/hms/test_hms.c:247:13:DjiTest_ReplaceStr	4
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/hms/test_hms.c:276:13:DjiTest_MarchErrCodeInfoTable	12
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/hms/test_hms.c:329:24:DjiTest_HmsInfoCallback	3

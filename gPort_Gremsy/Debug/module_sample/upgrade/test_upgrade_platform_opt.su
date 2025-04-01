@@ -1,0 +1,11 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/upgrade/test_upgrade_platform_opt.c:40:17:DjiTest_RegUpgradePlatformOpt	24	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/upgrade/test_upgrade_platform_opt.c:88:17:DjiTest_RebootSystem	8	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/upgrade/test_upgrade_platform_opt.c:93:17:DjiTest_CleanUpgradeProgramFileStoreArea	8	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/upgrade/test_upgrade_platform_opt.c:98:17:DjiTest_CreateUpgradeProgramFile	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/upgrade/test_upgrade_platform_opt.c:103:17:DjiTest_WriteUpgradeProgramFile	24	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/upgrade/test_upgrade_platform_opt.c:108:17:DjiTest_ReadUpgradeProgramFile	32	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/upgrade/test_upgrade_platform_opt.c:114:17:DjiTest_CloseUpgradeProgramFile	8	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/upgrade/test_upgrade_platform_opt.c:119:17:DjiTest_ReplaceOldProgram	8	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/upgrade/test_upgrade_platform_opt.c:124:17:DjiTest_SetUpgradeRebootState	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/upgrade/test_upgrade_platform_opt.c:129:17:DjiTest_GetUpgradeRebootState	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/upgrade/test_upgrade_platform_opt.c:134:17:DjiTest_CleanUpgradeRebootState	8	static

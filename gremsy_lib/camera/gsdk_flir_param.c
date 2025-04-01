@@ -15,7 +15,7 @@
  * material(s) incorporated within the information, in any form, is strictly
  * prohibited without the express written consent of GREMSY.
  *
- * If you receive this source code without GREMSY’s authorization, you may not
+ * If you receive this source code without GREMSYï¿½s authorization, you may not
  * further disseminate the information, and you must immediately remove the
  * source code and notify GREMSY of its removal. GREMSY reserves the right to pursue
  * legal actions against you for any loss(es) or damage(s) caused by your
@@ -26,11 +26,11 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "eeprom.h"
-#include "flir_camera_parameters.h"
+//#include "flir_camera_parameters.h"
 #include <psdk_logger.h>
 #include <psdk_gimbal.h>
 #include "psdk_platform.h"
-#include "gremsy_flir_camera.h"
+#include "gsdk_flir_camera.h"
 
 /* Private typedef -----------------------------------------------------------*/
 /**

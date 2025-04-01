@@ -1,0 +1,5 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/BSP/dji_ringbuffer.c:47:17:RingBuf_CutBufSizeToPowOfTwo	2
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/BSP/dji_ringbuffer.c:64:6:RingBuf_Init	1
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/BSP/dji_ringbuffer.c:79:10:RingBuf_Put	1
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/BSP/dji_ringbuffer.c:104:10:RingBuf_Get	1
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/BSP/dji_ringbuffer.c:127:10:RingBuf_GetUnusedSize	1

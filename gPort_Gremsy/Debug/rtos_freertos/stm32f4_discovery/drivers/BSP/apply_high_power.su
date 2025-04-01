@@ -1,0 +1,2 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/BSP/apply_high_power.c:45:17:DjiTest_HighPowerApplyPinInit	32	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/BSP/apply_high_power.c:61:17:DjiTest_WriteHighPowerApplyPin	32	static

@@ -1,0 +1,11 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/CMSIS/Include/core_cm4.h:1939:34:__NVIC_SystemReset	4	static,ignoring_inline_asm
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/BSP/upgrade_platform_opt_stm32.c:49:17:DjiUpgradePlatformStm32_RebootSystem	8	static,ignoring_inline_asm
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/BSP/upgrade_platform_opt_stm32.c:60:17:DjiUpgradePlatformStm32_CleanUpgradeProgramFileStoreArea	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/BSP/upgrade_platform_opt_stm32.c:72:17:DjiUpgradePlatformStm32_CreateUpgradeProgramFile	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/BSP/upgrade_platform_opt_stm32.c:79:17:DjiUpgradePlatformStm32_WriteUpgradeProgramFile	32	static,ignoring_inline_asm
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/BSP/upgrade_platform_opt_stm32.c:96:17:DjiUpgradePlatformStm32_ReadUpgradeProgramFile	24	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/BSP/upgrade_platform_opt_stm32.c:105:17:DjiUpgradePlatformStm32_CloseUpgradeProgramFile	8	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/BSP/upgrade_platform_opt_stm32.c:113:17:DjiUpgradePlatformStm32_ReplaceOldProgram	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/BSP/upgrade_platform_opt_stm32.c:135:17:DjiUpgradePlatformStm32_SetUpgradeRebootState	32	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/BSP/upgrade_platform_opt_stm32.c:157:17:DjiUpgradePlatformStm32_GetUpgradeRebootState	24	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/BSP/upgrade_platform_opt_stm32.c:174:17:DjiUpgradePlatformStm32_CleanUpgradeRebootState	16	static

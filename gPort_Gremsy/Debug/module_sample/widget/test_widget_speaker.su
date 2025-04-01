@@ -1,0 +1,10 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget/test_widget_speaker.c:104:17:DjiTest_WidgetSpeakerStartService	32	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget/test_widget_speaker.c:424:13:SetSpeakerState	40	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget/test_widget_speaker.c:442:24:GetSpeakerState	40	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget/test_widget_speaker.c:464:24:SetWorkMode	40	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget/test_widget_speaker.c:487:24:SetPlayMode	40	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget/test_widget_speaker.c:510:24:StartPlay	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget/test_widget_speaker.c:529:24:StopPlay	32	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget/test_widget_speaker.c:560:24:SetVolume	176	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget/test_widget_speaker.c:607:24:ReceiveTtsData	32	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget/test_widget_speaker.c:659:24:ReceiveAudioData	104	static

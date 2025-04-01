@@ -1718,7 +1718,7 @@ void PsdkCamera_HandleMessage(const mavlink_message_t* msg)
         case MAVLINK_MSG_ID_HEARTBEAT:
         {
             mavlink_heartbeat_t packet;
-
+        //    DebugInfo("Got MAVLINK_MSG_ID_...!");
             /* Call decode function */
             mavlink_msg_heartbeat_decode(msg, &packet);
             
@@ -1770,7 +1770,7 @@ void PsdkCamera_HandleMessage(const mavlink_message_t* msg)
             
             mavlink_msg_command_ack_decode(msg, &packet);
             
-            DebugInfo("Command ACK : %d result: %d, progress: %d", packet.command, packet.result, packet.progress);
+        //    DebugInfo("Command ACK : %d result: %d, progress: %d", packet.command, packet.result, packet.progress);
             
             /*!< Check the ack is valid */
             if(s_pFLIRHandle->waitCommandAck == packet.command) {

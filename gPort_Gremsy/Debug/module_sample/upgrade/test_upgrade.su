@@ -1,0 +1,7 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/upgrade/test_upgrade.c:59:1:DjiTest_UpgradeStartService	104	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/upgrade/test_upgrade.c:154:24:DjiTest_EnterUpgradeMode	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/upgrade/test_upgrade.c:164:24:DjiTest_CheckFirmware	4	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/upgrade/test_upgrade.c:170:24:DjiTest_StartUpgrade	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/upgrade/test_upgrade.c:182:24:DjiTest_FinishUpgrade	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/upgrade/test_upgrade.c:199:14:DjiTest_EnterUpgradeModeProcessTask	32	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/upgrade/test_upgrade.c:233:14:DjiTest_UpgradeProcessTask	48	static

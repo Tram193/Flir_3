@@ -1,0 +1,6 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/fc_subscription/test_fc_subscription.c:54:17:DjiTest_FcSubscriptionStartService	7
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/fc_subscription/test_fc_subscription.c:113:17:DjiTest_FcSubscriptionRunSample	10
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/fc_subscription/test_fc_subscription.c:225:17:DjiTest_FcSubscriptionDataShowTrigger	1
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/fc_subscription/test_fc_subscription.c:232:17:DjiTest_FcSubscriptionGetTotalSatelliteNumber	1
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/fc_subscription/test_fc_subscription.c:246:14:UserFcSubscription_Task	6
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/fc_subscription/test_fc_subscription.c:311:24:DjiTest_FcSubscriptionReceiveQuaternionCallback	3

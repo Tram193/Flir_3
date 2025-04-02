@@ -1,0 +1,6 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget/test_widget.c:139:17:DjiTest_WidgetStartService	48	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget/test_widget.c:228:17:DjiTest_WidgetSetConfigFilePath	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget/test_widget.c:237:28:DjiTest_WidgetLogAppend	4	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget/test_widget.c:250:14:DjiTest_WidgetTask	608	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget/test_widget.c:369:24:DjiTestWidget_SetWidgetValue	48	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget/test_widget.c:635:24:DjiTestWidget_GetWidgetValue	24	static

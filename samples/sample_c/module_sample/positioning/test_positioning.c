@@ -32,7 +32,7 @@
 #include "dji_platform.h"
 #include "time_sync/test_time_sync.h"
 
-#include "camera/gsdk_wws_camera.h"
+#include "camera/gsdk_flir_camera.h"
 
 /* Private constants ---------------------------------------------------------*/
 #define POSITIONING_TASK_FREQ                     (50)
@@ -151,26 +151,6 @@ static void *DjiTest_PositioningTask(void *arg)
                 positionInfo[i].targetPointPositionStandardDeviation.longitude,
                 positionInfo[i].targetPointPositionStandardDeviation.latitude,
                 positionInfo[i].targetPointPositionStandardDeviation.height);
-            
-            WIRISCamera->GPSData.longtitude     = positionInfo[i].targetPointPosition.longitude;
-            WIRISCamera->GPSData.latitude       = positionInfo[i].targetPointPosition.latitude;
-            WIRISCamera->GPSData.hfsl           = positionInfo[i].targetPointPosition.height;
-
-            if(positionInfo[i].positionSolutionProperty != DJI_FC_SUBSCRIPTION_POSITION_SOLUTION_PROPERTY_NOT_AVAILABLE) {
-                WIRISCamera->GPSData.gpsQuality = 1;
-            }
-            
-            WIRISCamera->GPSData.aircraftTime.year  = aircraftTime.year;
-            WIRISCamera->GPSData.aircraftTime.month = aircraftTime.month;
-            WIRISCamera->GPSData.aircraftTime.day   = aircraftTime.day;
-            
-            WIRISCamera->GPSData.aircraftTime.hour = aircraftTime.hour;
-            WIRISCamera->GPSData.aircraftTime.minute = aircraftTime.minute;
-            WIRISCamera->GPSData.aircraftTime.second = aircraftTime.second;
-            
-            if(!WIRISCamera->isReadyGPS) {
-                WIRISCamera->isReadyGPS = true;
-            }
         }
 
         s_eventIndex++;

@@ -1,0 +1,6 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/data_transmission/test_data_transmission.c:53:17:DjiTest_DataTransmissionStartService	64	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/data_transmission/test_data_transmission.c:126:17:DjiTest_DataTransmissionStopService	24	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/data_transmission/test_data_transmission.c:152:14:UserDataTransmission_Task	112	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/data_transmission/test_data_transmission.c:235:24:ReceiveDataFromMobile	32	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/data_transmission/test_data_transmission.c:256:24:ReceiveDataFromOnboardComputer	32	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/data_transmission/test_data_transmission.c:277:24:ReceiveDataFromPayload	32	static

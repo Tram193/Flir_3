@@ -1,0 +1,17 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/common/osal/osal.c:44:17:Osal_TaskCreate	56	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/common/osal/osal.c:66:17:Osal_TaskDestroy	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/common/osal/osal.c:77:17:Osal_TaskSleepMs	24	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/common/osal/osal.c:89:17:Osal_MutexCreate	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/common/osal/osal.c:103:17:Osal_MutexDestroy	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/common/osal/osal.c:114:17:Osal_MutexLock	24	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/common/osal/osal.c:131:17:Osal_MutexUnlock	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/common/osal/osal.c:144:17:Osal_SemaphoreCreate	24	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/common/osal/osal.c:161:17:Osal_SemaphoreDestroy	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/common/osal/osal.c:172:17:Osal_SemaphoreTimedWait	24	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/common/osal/osal.c:196:17:Osal_SemaphoreWait	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/common/osal/osal.c:203:17:Osal_SemaphorePost	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/common/osal/osal.c:216:17:Osal_GetTimeMs	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/common/osal/osal.c:227:17:Osal_GetTimeUs	24	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/common/osal/osal.c:238:17:Osal_GetRandomNum	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/common/osal/osal.c:245:7:Osal_Malloc	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/common/osal/osal.c:250:6:Osal_Free	16	static

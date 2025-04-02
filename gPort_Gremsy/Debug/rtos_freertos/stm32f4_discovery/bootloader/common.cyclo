@@ -1,0 +1,4 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/bootloader/common.c:70:6:Int2Str	3
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/bootloader/common.c:94:10:Str2Int	28
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/bootloader/common.c:154:6:Serial_PutString	2
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/bootloader/common.c:170:19:Serial_PutByte	1

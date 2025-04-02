@@ -1,0 +1,2 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/BSP/uart_level_shifter.c:52:17:UartLS_Init	32	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/drivers/BSP/uart_level_shifter.c:90:10:UartLS_GetPinState	16	static

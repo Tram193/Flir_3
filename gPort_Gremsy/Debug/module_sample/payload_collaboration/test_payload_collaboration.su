@@ -1,0 +1,3 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/payload_collaboration/test_payload_collaboration.c:63:17:DjiTest_PayloadCollaborationStartService	32	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/payload_collaboration/test_payload_collaboration.c:78:17:DjiTest_PayloadCollaborationDataShowTrigger	4	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/payload_collaboration/test_payload_collaboration.c:92:14:DjiTest_PayloadCollaborationTask	72	static

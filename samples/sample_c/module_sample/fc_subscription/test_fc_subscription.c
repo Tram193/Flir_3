@@ -47,6 +47,9 @@ static bool s_userFcSubscriptionDataShow = false;
 static uint8_t s_totalSatelliteNumberUsed = 0;
 static uint32_t s_userFcSubscriptionDataCnt = 0;
 
+/*!< Data geotagging Information*/
+ T_GeotagInfo         geoTagInfo;
+
 /* Exported functions definition ---------------------------------------------*/
 T_DjiReturnCode DjiTest_FcSubscriptionStartService(void)
 {
@@ -60,7 +63,7 @@ T_DjiReturnCode DjiTest_FcSubscriptionStartService(void)
         return DJI_ERROR_SYSTEM_MODULE_CODE_UNKNOWN;
     }
 
-    djiStat = DjiFcSubscription_SubscribeTopic(DJI_FC_SUBSCRIPTION_TOPIC_QUATERNION, DJI_DATA_SUBSCRIPTION_TOPIC_1_HZ,
+    djiStat = DjiFcSubscription_SubscribeTopic(DJI_FC_SUBSCRIPTION_TOPIC_QUATERNION, DJI_DATA_SUBSCRIPTION_TOPIC_10_HZ,
                                                DjiTest_FcSubscriptionReceiveQuaternionCallback);
     if (djiStat != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
         USER_LOG_ERROR("Subscribe topic quaternion error.");
@@ -69,16 +72,7 @@ T_DjiReturnCode DjiTest_FcSubscriptionStartService(void)
         USER_LOG_DEBUG("Subscribe topic quaternion success.");
     }
 
-//    djiStat = DjiFcSubscription_SubscribeTopic(DJI_FC_SUBSCRIPTION_TOPIC_VELOCITY, DJI_DATA_SUBSCRIPTION_TOPIC_1_HZ,
-//                                               NULL);
-//    if (djiStat != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
-//        USER_LOG_ERROR("Subscribe topic velocity error.");
-//        return DJI_ERROR_SYSTEM_MODULE_CODE_UNKNOWN;
-//    } else {
-//        USER_LOG_DEBUG("Subscribe topic velocity success.");
-//    }
-
-    djiStat = DjiFcSubscription_SubscribeTopic(DJI_FC_SUBSCRIPTION_TOPIC_RTK_POSITION, DJI_DATA_SUBSCRIPTION_TOPIC_50_HZ,
+    djiStat = DjiFcSubscription_SubscribeTopic(DJI_FC_SUBSCRIPTION_TOPIC_RTK_POSITION, DJI_DATA_SUBSCRIPTION_TOPIC_1_HZ,
                                                NULL);
     if (djiStat != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
         USER_LOG_ERROR("Subscribe topic gps position error.");
@@ -87,68 +81,24 @@ T_DjiReturnCode DjiTest_FcSubscriptionStartService(void)
         USER_LOG_DEBUG("Subscribe topic gps position success.");
     }
     
-//    djiStat = DjiFcSubscription_SubscribeTopic(DJI_FC_SUBSCRIPTION_TOPIC_RTK_VELOCITY, DJI_DATA_SUBSCRIPTION_TOPIC_1_HZ,
-//                                               NULL);
-//    if (djiStat != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
-//        USER_LOG_ERROR("Subscribe topic rtk velocity error.");
-//        return DJI_ERROR_SYSTEM_MODULE_CODE_UNKNOWN;
-//    } else {
-//        USER_LOG_DEBUG("Subscribe topic rtk velocity success.");
-//    }
-//    
-//    djiStat = DjiFcSubscription_SubscribeTopic(DJI_FC_SUBSCRIPTION_TOPIC_RTK_YAW, DJI_DATA_SUBSCRIPTION_TOPIC_1_HZ,
-//                                               NULL);
-//    if (djiStat != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
-//        USER_LOG_ERROR("Subscribe topic rtk yaw error.");
-//        return DJI_ERROR_SYSTEM_MODULE_CODE_UNKNOWN;
-//    } else {
-//        USER_LOG_DEBUG("Subscribe topic rtk yaw success.");
-//    }
-//    
-//    djiStat = DjiFcSubscription_SubscribeTopic(DJI_FC_SUBSCRIPTION_TOPIC_GPS_SIGNAL_LEVEL, DJI_DATA_SUBSCRIPTION_TOPIC_1_HZ,
-//                                               NULL);
-//    if (djiStat != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
-//        USER_LOG_ERROR("Subscribe topic gps signal level error.");
-//        return DJI_ERROR_SYSTEM_MODULE_CODE_UNKNOWN;
-//    } else {
-//        USER_LOG_DEBUG("Subscribe topic gps signal level success.");
-//    }
-//    
-//    djiStat = DjiFcSubscription_SubscribeTopic(DJI_FC_SUBSCRIPTION_TOPIC_GPS_DATE, DJI_DATA_SUBSCRIPTION_TOPIC_1_HZ,
-//                                               NULL);
-//    if (djiStat != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
-//        USER_LOG_ERROR("Subscribe topic gps date error.");
-//        return DJI_ERROR_SYSTEM_MODULE_CODE_UNKNOWN;
-//    } else {
-//        USER_LOG_DEBUG("Subscribe topic gps date success.");
-//    }
-//    
-//    djiStat = DjiFcSubscription_SubscribeTopic(DJI_FC_SUBSCRIPTION_TOPIC_GPS_TIME, DJI_DATA_SUBSCRIPTION_TOPIC_1_HZ,
-//                                               NULL);
-//    if (djiStat != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
-//        USER_LOG_ERROR("Subscribe topic gps date error.");
-//        return DJI_ERROR_SYSTEM_MODULE_CODE_UNKNOWN;
-//    } else {
-//        USER_LOG_DEBUG("Subscribe topic gps date success.");
-//    }
-//    
-//    djiStat = DjiFcSubscription_SubscribeTopic(DJI_FC_SUBSCRIPTION_TOPIC_RTK_CONNECT_STATUS, DJI_DATA_SUBSCRIPTION_TOPIC_1_HZ,
-//                                               NULL);
-//    if (djiStat != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
-//        USER_LOG_ERROR("Subscribe topic rtk connect status error.");
-//        return DJI_ERROR_SYSTEM_MODULE_CODE_UNKNOWN;
-//    } else {
-//        USER_LOG_DEBUG("Subscribe topic rtk connect status success.");
-//    }
+    djiStat = DjiFcSubscription_SubscribeTopic(DJI_FC_SUBSCRIPTION_TOPIC_RTK_VELOCITY, DJI_DATA_SUBSCRIPTION_TOPIC_1_HZ,
+                                               NULL);
+    if (djiStat != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
+        USER_LOG_ERROR("Subscribe topic rtk velocity error.");
+        return DJI_ERROR_SYSTEM_MODULE_CODE_UNKNOWN;
+    } else {
+        USER_LOG_DEBUG("Subscribe topic rtk velocity success.");
+    }
+    
+    djiStat = DjiFcSubscription_SubscribeTopic(DJI_FC_SUBSCRIPTION_TOPIC_RTK_YAW, DJI_DATA_SUBSCRIPTION_TOPIC_1_HZ,
+                                               NULL);
+    if (djiStat != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
+        USER_LOG_ERROR("Subscribe topic rtk yaw error.");
+        return DJI_ERROR_SYSTEM_MODULE_CODE_UNKNOWN;
+    } else {
+        USER_LOG_DEBUG("Subscribe topic rtk yaw success.");
+    }
 
-//    djiStat = DjiFcSubscription_SubscribeTopic(DJI_FC_SUBSCRIPTION_TOPIC_GPS_DETAILS, DJI_DATA_SUBSCRIPTION_TOPIC_1_HZ,
-//                                               NULL);
-//    if (djiStat != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
-//        USER_LOG_ERROR("Subscribe topic gps details error.");
-//        return DJI_ERROR_SYSTEM_MODULE_CODE_UNKNOWN;
-//    } else {
-//        USER_LOG_DEBUG("Subscribe topic gps details success.");
-//    }
 
     if (osalHandler->TaskCreate("user_subscription_task", UserFcSubscription_Task,
                                 FC_SUBSCRIPTION_TASK_STACK_SIZE, NULL, &s_userFcSubscriptionThread) !=
@@ -296,12 +246,7 @@ T_DjiReturnCode DjiTest_FcSubscriptionGetTotalSatelliteNumber(uint8_t *number)
 static void *UserFcSubscription_Task(void *arg)
 {
     T_DjiReturnCode djiStat;
-    T_DjiFcSubscriptionVelocity velocity = {0};
-    T_DjiDataTimestamp timestamp = {0};
-//    T_DjiFcSubscriptionGpsPosition gpsPosition = {0};
-//    T_DjiFcSubscriptionGpsDetails gpsDetails = {0};
-    
-    user_fc_subscription_info_t fc_subInfo = {0};
+    T_DjiFcSubscriptionQuaternion quaternion = {0};
 
     T_DjiOsalHandler *osalHandler = NULL;
 
@@ -311,106 +256,51 @@ static void *UserFcSubscription_Task(void *arg)
     while (1) {
         osalHandler->TaskSleepMs(1000 / FC_SUBSCRIPTION_TASK_FREQ);
 
-//        djiStat = DjiFcSubscription_GetLatestValueOfTopic(DJI_FC_SUBSCRIPTION_TOPIC_VELOCITY,
-//                                                          (uint8_t *) &velocity,
-//                                                          sizeof(T_DjiFcSubscriptionVelocity),
-//                                                          &timestamp);
-//        if (djiStat != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
-//            USER_LOG_ERROR("get value of topic velocity error.");
-//        }
-
-//        if (s_userFcSubscriptionDataShow == true) {
-//            USER_LOG_INFO("velocity: x %f y %f z %f, healthFlag %d.", velocity.data.x, velocity.data.y,
-//                          velocity.data.z, velocity.health);
-//        }
-
-        djiStat = DjiFcSubscription_GetLatestValueOfTopic(DJI_FC_SUBSCRIPTION_TOPIC_RTK_POSITION,
-                                                          (uint8_t *) &fc_subInfo.RtkPosition,
+        djiStat = DjiFcSubscription_GetLatestValueOfTopic(DJI_FC_SUBSCRIPTION_TOPIC_QUATERNION,
+                                                          (uint8_t *) &quaternion,
                                                           sizeof(T_DjiFcSubscriptionRtkPosition),
-                                                          &timestamp);
+                                                          &geoTagInfo.timestamp);
                                                           
         if (djiStat != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
-            USER_LOG_ERROR("get value of topic gps position error.");
+            USER_LOG_ERROR("get value of topic quaternion error.");
         }
         
-//        djiStat = DjiFcSubscription_GetLatestValueOfTopic(DJI_FC_SUBSCRIPTION_TOPIC_RTK_VELOCITY,
-//                                                          (uint8_t *) &fc_subInfo.RtkVelocity,
-//                                                          sizeof(T_DjiFcSubscriptionRtkVelocity),
-//                                                          &timestamp);
-//                                                          
-//        if (djiStat != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
-//            USER_LOG_ERROR("get value of topic rtk_Velocity error.");
-//        }
-//        
-//        djiStat = DjiFcSubscription_GetLatestValueOfTopic(DJI_FC_SUBSCRIPTION_TOPIC_RTK_YAW,
-//                                                          (uint8_t *) &fc_subInfo.RtkYaw,
-//                                                          sizeof(T_DjiFcSubscriptionRtkYaw),
-//                                                          &timestamp);
-//                                                          
-//        if (djiStat != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
-//            USER_LOG_ERROR("get value of topic rtk yaw error.");
-//        }
-
-//        if (s_userFcSubscriptionDataShow == true) {
-////            USER_LOG_INFO("gps position: x %d y %d z %d.", gpsPosition.x, gpsPosition.y, gpsPosition.z);
-//        }
-//        
-//        djiStat = DjiFcSubscription_GetLatestValueOfTopic(DJI_FC_SUBSCRIPTION_TOPIC_GPS_SIGNAL_LEVEL,
-//                                                          (uint8_t *) &fc_subInfo.GpsSignalLeve,
-//                                                          sizeof(T_DjiFcSubscriptionGpsSignalLevel),
-//                                                          &timestamp);
-//                                                          
-//        if (djiStat != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
-//            USER_LOG_ERROR("get value of topic gps signal level error.");
-//        }
-//        
-//        djiStat = DjiFcSubscription_GetLatestValueOfTopic(DJI_FC_SUBSCRIPTION_TOPIC_GPS_DATE,
-//                                                          (uint8_t *) &fc_subInfo.GpsDate,
-//                                                          sizeof(T_DjiFcSubscriptionGpsDate),
-//                                                          &timestamp);
-//                                                          
-//        if (djiStat != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
-//            USER_LOG_ERROR("get value of topic gps date error.");
-//        }
-//        
-//        
-//        djiStat = DjiFcSubscription_GetLatestValueOfTopic(DJI_FC_SUBSCRIPTION_TOPIC_GPS_TIME,
-//                                                          (uint8_t *) &fc_subInfo.GpsTime,
-//                                                          sizeof(T_DjiFcSubscriptionGpsTime),
-//                                                          &timestamp);
-//                                                          
-//        if (djiStat != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
-//            USER_LOG_ERROR("get value of topic gps time error.");
-//        }
-
-//        djiStat = DjiFcSubscription_GetLatestValueOfTopic(DJI_FC_SUBSCRIPTION_TOPIC_RTK_CONNECT_STATUS,
-//                                                          (uint8_t *) &fc_subInfo.RTKConnectStatus,
-////                                                          sizeof(T_DjiFcSubscriptionGpsPosition),
-//                                                          sizeof(T_DjiFcSubscriptionRTKConnectStatus),
-//                                                          &timestamp);
-//                                                          
-//        if (djiStat == DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
-//            USER_LOG_WARN("get value of topic rtk connect status [%d][%d]"
-//                                                                , fc_subInfo.RTKConnectStatus.rtkConnected
-//                                                                , fc_subInfo.RTKConnectStatus.reserve);
-//        }
+        djiStat = DjiFcSubscription_GetLatestValueOfTopic(DJI_FC_SUBSCRIPTION_TOPIC_RTK_POSITION,
+                                                          (uint8_t *) &geoTagInfo.rtkPosition,
+                                                          sizeof(T_DjiFcSubscriptionRtkPosition),
+                                                          &geoTagInfo.timestamp);
+                                                          
+        if (djiStat != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
+            USER_LOG_ERROR("get value of topic rtk position error.");
+        }
         
-//        djiStat = DjiFcSubscription_GetLatestValueOfTopic(DJI_FC_SUBSCRIPTION_TOPIC_GPS_DETAILS,
-//                                                          (uint8_t *) &gpsDetails,
-//                                                          sizeof(T_DjiFcSubscriptionGpsDetails),
-//                                                          &timestamp);
-//        if (djiStat != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
-//            USER_LOG_ERROR("get value of topic gps details error.");
-//        }
-
-//        if (s_userFcSubscriptionDataShow == true) {
-//            USER_LOG_INFO("gps total satellite number used: %d %d %d.",
-//                          gpsDetails.gpsSatelliteNumberUsed,
-//                          gpsDetails.glonassSatelliteNumberUsed,
-//                          gpsDetails.totalSatelliteNumberUsed);
-//            s_totalSatelliteNumberUsed = gpsDetails.totalSatelliteNumberUsed;
-//        }
-
+        djiStat = DjiFcSubscription_GetLatestValueOfTopic(DJI_FC_SUBSCRIPTION_TOPIC_RTK_VELOCITY,
+                                                          (uint8_t *) &geoTagInfo.rtkVelocity,
+                                                          sizeof(T_DjiFcSubscriptionRtkVelocity),
+                                                          &geoTagInfo.timestamp);
+                                                          
+        if (djiStat != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
+            USER_LOG_ERROR("get value of topic rtk_Velocity error.");
+        }
+        
+        djiStat = DjiFcSubscription_GetLatestValueOfTopic(DJI_FC_SUBSCRIPTION_TOPIC_RTK_YAW,
+                                                          (uint8_t *) &geoTagInfo.rtkYaw,
+                                                          sizeof(T_DjiFcSubscriptionRtkYaw),
+                                                          &geoTagInfo.timestamp);
+                                                          
+        if (djiStat != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
+            USER_LOG_ERROR("get value of topic rtk yaw error.");
+        }
+        
+        /**
+          * @} //  GET_VALUE_GPS_TOPIC
+          */
+        
+        if (djiStat != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
+            geoTagInfo.isNewData = false;
+        } else {
+            geoTagInfo.isNewData = true;
+        }
     }
 }
 

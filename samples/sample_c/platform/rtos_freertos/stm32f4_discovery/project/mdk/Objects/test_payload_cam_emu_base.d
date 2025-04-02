@@ -17,8 +17,5 @@
 .\objects\test_payload_cam_emu_base.o: ..\..\..\..\..\..\..\psdk_lib\include\dji_gimbal.h
 .\objects\test_payload_cam_emu_base.o: ..\..\..\..\..\..\..\psdk_lib\include\dji_xport.h
 .\objects\test_payload_cam_emu_base.o: ..\..\..\..\..\module_sample\gimbal_emu/test_payload_gimbal_emu.h
-.\objects\test_payload_cam_emu_base.o: ..\..\..\..\..\..\..\gremsy_lib\camera/gsdk_wws_camera.h
+.\objects\test_payload_cam_emu_base.o: ..\..\..\..\..\..\..\gremsy_lib\camera/gsdk_flir_camera.h
 .\objects\test_payload_cam_emu_base.o: ..\..\..\..\..\..\..\gremsy_lib\std_typedef.h
-.\objects\test_payload_cam_emu_base.o: ..\..\..\..\..\..\..\psdk_lib\include\dji_positioning.h
-.\objects\test_payload_cam_emu_base.o: ..\..\..\..\..\..\..\psdk_lib\include\dji_time_sync.h
-.\objects\test_payload_cam_emu_base.o: ..\..\..\..\..\..\..\psdk_lib\include\dji_fc_subscription.h

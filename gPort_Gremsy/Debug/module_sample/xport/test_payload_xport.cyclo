@@ -1,0 +1,6 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/xport/test_payload_xport.c:55:17:DjiTest_XPortStartService	16
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/xport/test_payload_xport.c:160:17:DjiTest_XPortDeInit	4
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/xport/test_payload_xport.c:188:17:DjiTest_XPortGetSystemState	5
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/xport/test_payload_xport.c:222:14:UserXPort_Task	11
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/xport/test_payload_xport.c:314:24:ReceiveXPortSystemState	3
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/xport/test_payload_xport.c:343:24:ReceiveXPortAttitudeInformation	1

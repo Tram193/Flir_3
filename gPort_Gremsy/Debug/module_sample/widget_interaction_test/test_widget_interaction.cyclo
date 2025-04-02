@@ -1,0 +1,8 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget_interaction_test/test_widget_interaction.c:177:6:DjiTest_WidgetLogAppend	5
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget_interaction_test/test_widget_interaction.c:203:17:DjiTest_WidgetInteractionStartService	6
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget_interaction_test/test_widget_interaction.c:298:17:DjiTest_WidgetInteractionSetConfigFilePath	2
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget_interaction_test/test_widget_interaction.c:315:14:DjiTest_WidgetTask	3
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget_interaction_test/test_widget_interaction.c:366:14:DjiTest_WidgetInteractionTask	59
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget_interaction_test/test_widget_interaction.c:625:24:DjiTestWidget_SetWidgetValue	20
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget_interaction_test/test_widget_interaction.c:679:24:DjiTestWidget_GetWidgetValue	1
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget_interaction_test/test_widget_interaction.c:690:24:DjiTestWidget_TriggerChangeAlias	2

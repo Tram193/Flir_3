@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdtprojectproperties>
+  <section name="org.eclipse.cdt.internal.ui.wizards.settingswizards.IncludePaths">
+    <language id="org.eclipse.cdt.core.assembly" name="s,S"/>
+    <language id="org.eclipse.cdt.core.gcc" name="C Source File">
+      <includepath>Inc</includepath>
+      <includepath>${PSDK_PATH}\gremsy_lib</includepath>
+      <includepath>${PSDK_PATH}\gremsy_lib\camera</includepath>
+      <includepath>${PSDK_PATH}\gremsy_lib\gimbal</includepath>
+      <includepath>${PSDK_PATH}\gremsy_lib\mavlink</includepath>
+      <includepath>${PSDK_PATH}\gremsy_lib\som</includepath>
+      <includepath>${PSDK_PATH}\samples\sample_c\platform\rtos_freertos\common</includepath>
+      <includepath>${PSDK_PATH}\samples\sample_c\platform\rtos_freertos\common\osal</includepath>
+      <includepath>${PSDK_PATH}\samples\sample_c\platform\rtos_freertos\stm32f4_discovery</includepath>
+      <includepath>${PSDK_PATH}\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\application</includepath>
+      <includepath>${PSDK_PATH}\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\drivers</includepath>
+      <includepath>${PSDK_PATH}\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\hal</includepath>
+      <includepath>${PSDK_PATH}\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\middlewares</includepath>
+      <includepath>${PSDK_PATH}\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\project</includepath>
+      <includepath>${PSDK_PATH}\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\middlewares\Third_Party\FreeRTOS\Source\include</includepath>
+      <includepath>${PSDK_PATH}\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS</includepath>
+      <includepath>${PSDK_PATH}\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM4F</includepath>
+      <includepath>${PSDK_PATH}\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\middlewares\ST\STM32_USB_Host_Library\Core\Inc</includepath>
+      <includepath>${PSDK_PATH}\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\middlewares\ST\STM32_USB_Host_Library\Class\CDC\Inc</includepath>
+      <includepath>${PSDK_PATH}\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\drivers\STM32F4xx_HAL_Driver\Inc</includepath>
+      <includepath>${PSDK_PATH}\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\drivers\STM32F4xx_HAL_Driver\Inc\Legacy</includepath>
+      <includepath>${PSDK_PATH}\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\drivers\CMSIS\Device\ST\STM32F4xx\Include</includepath>
+      <includepath>${PSDK_PATH}\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\drivers\CMSIS\Include</includepath>
+      <includepath>${PSDK_PATH}\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\drivers\BSP</includepath>
+      <includepath>${PSDK_PATH}\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\drivers\USB_HOST\Target</includepath>
+      <includepath>${PSDK_PATH}\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\drivers\USB_HOST\App</includepath>
+      <includepath>${PSDK_PATH}\psdk_lib\include</includepath>
+      <includepath>${PSDK_PATH}\samples\sample_c\module_sample</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\gremsy_lib</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\gremsy_lib\camera</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\gremsy_lib\gimbal</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\gremsy_lib\mavlink</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\gremsy_lib\som</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\samples\sample_c\platform\rtos_freertos\common</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\samples\sample_c\platform\rtos_freertos\common\osal</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\samples\sample_c\platform\rtos_freertos\stm32f4_discovery</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\application</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\drivers</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\hal</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\middlewares</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\project</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\middlewares\Third_Party\FreeRTOS\Source\include</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM4F</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\middlewares\ST\STM32_USB_Host_Library\Core\Inc</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\middlewares\ST\STM32_USB_Host_Library\Class\CDC\Inc</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\drivers\STM32F4xx_HAL_Driver\Inc</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\drivers\STM32F4xx_HAL_Driver\Inc\Legacy</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\drivers\CMSIS\Device\ST\STM32F4xx\Include</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\drivers\CMSIS\Include</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\drivers\BSP</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\drivers\USB_HOST\Target</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\samples\sample_c\platform\rtos_freertos\stm32f4_discovery\drivers\USB_HOST\App</includepath>
+      <includepath>D:\PSDK\GremsyPSDK\psdk\psdk_lib\include</includepath>
+      <includepath>${PSDK_PATH}/psdk_lib/include/legacy_psdk2.x</includepath>
+    </language>
+    <language name="Object File"/>
+  </section>
+  <section name="org.eclipse.cdt.internal.ui.wizards.settingswizards.Macros">
+    <language id="org.eclipse.cdt.core.assembly" name="s,S">
+      <macro>
+        <name>FLIR_CAM</name>
+        <value>1</value>
+      </macro>
+    </language>
+    <language id="org.eclipse.cdt.core.gcc" name="C Source File">
+      <macro>
+        <name>STM32</name>
+        <value/>
+      </macro>
+      <macro>
+        <name>STM32F4</name>
+        <value/>
+      </macro>
+      <macro>
+        <name>STM32F407VETx</name>
+        <value/>
+      </macro>
+      <macro>
+        <name>SYSTEM_ARCH_RTOS</name>
+        <value/>
+      </macro>
+      <macro>
+        <name>USE_HAL_DRIVER</name>
+        <value/>
+      </macro>
+      <macro>
+        <name>STM32F407xx</name>
+        <value/>
+      </macro>
+      <macro>
+        <name>USE_BOOTLOADER</name>
+        <value>1</value>
+      </macro>
+      <macro>
+        <name>FLIR_CAM</name>
+        <value>1</value>
+      </macro>
+    </language>
+    <language name="Object File"/>
+  </section>
+</cdtprojectproperties>

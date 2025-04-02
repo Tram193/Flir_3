@@ -42,6 +42,11 @@ extern "C" {
 #define USER_DEVELOPER_ACCOUNT      "chu.nguyen@gremsy.com"
 #define USER_BAUD_RATE              "460800"
 
+#define FIRMWARE_MAJOR_VERSION      3
+#define FIRMWARE_MINOR_VERSION      5
+#define FIRMWARE_MODIFY_VERSION     0
+#define FIRMWARE_DEBUG_VERSION      0
+
 /* Exported types ------------------------------------------------------------*/
 
 /* Exported functions --------------------------------------------------------*/

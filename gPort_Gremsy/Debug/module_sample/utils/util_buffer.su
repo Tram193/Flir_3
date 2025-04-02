@@ -1,0 +1,5 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/utils/util_buffer.c:44:17:UtilBuffer_CutBufSizeToPowOfTwo	24	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/utils/util_buffer.c:61:6:UtilBuffer_Init	24	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/utils/util_buffer.c:76:10:UtilBuffer_Put	32	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/utils/util_buffer.c:101:10:UtilBuffer_Get	32	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/utils/util_buffer.c:124:10:UtilBuffer_GetUnusedSize	16	static

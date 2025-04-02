@@ -1,0 +1,4 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/application/main.c:54:5:main	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/application/main.c:107:13:SystemClock_Config	88	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/application/main.c:152:6:HAL_TIM_PeriodElapsedCallback	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/application/main.c:169:6:Error_Handler	4	static,ignoring_inline_asm

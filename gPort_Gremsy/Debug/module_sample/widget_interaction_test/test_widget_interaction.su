@@ -1,0 +1,8 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget_interaction_test/test_widget_interaction.c:177:6:DjiTest_WidgetLogAppend	56	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget_interaction_test/test_widget_interaction.c:203:17:DjiTest_WidgetInteractionStartService	48	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget_interaction_test/test_widget_interaction.c:298:17:DjiTest_WidgetInteractionSetConfigFilePath	16	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget_interaction_test/test_widget_interaction.c:315:14:DjiTest_WidgetTask	320	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget_interaction_test/test_widget_interaction.c:366:14:DjiTest_WidgetInteractionTask	40	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget_interaction_test/test_widget_interaction.c:625:24:DjiTestWidget_SetWidgetValue	40	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget_interaction_test/test_widget_interaction.c:679:24:DjiTestWidget_GetWidgetValue	24	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/widget_interaction_test/test_widget_interaction.c:690:24:DjiTestWidget_TriggerChangeAlias	8	static

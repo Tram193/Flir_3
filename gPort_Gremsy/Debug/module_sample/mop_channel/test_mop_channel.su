@@ -1,0 +1,6 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/mop_channel/test_mop_channel.c:105:17:DjiTest_MopChannelStartService	40	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/mop_channel/test_mop_channel.c:151:14:DjiTest_MopChannelSendNormalTask	56	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/mop_channel/test_mop_channel.c:202:14:DjiTest_MopChannelRecvNormalTask	56	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/mop_channel/test_mop_channel.c:285:14:DjiTest_MopChannelFileServiceAcceptTask	48	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/mop_channel/test_mop_channel.c:355:14:DjiTest_MopChannelFileServiceSendTask	1568	static
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/mop_channel/test_mop_channel.c:623:14:DjiTest_MopChannelFileServiceRecvTask	272	static

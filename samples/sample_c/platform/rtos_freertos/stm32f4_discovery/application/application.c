@@ -115,10 +115,10 @@ void DjiUser_StartTask(void const *argument)
         .UartGetStatus = HalUart_GetStatus,
     };
     T_DjiFirmwareVersion firmwareVersion = {
-        .majorVersion = 1,
-        .minorVersion = 0,
-        .modifyVersion = 0,
-        .debugVersion = 0,
+        .majorVersion   = FIRMWARE_MAJOR_VERSION,
+        .minorVersion   = FIRMWARE_MINOR_VERSION,
+        .modifyVersion  = FIRMWARE_MODIFY_VERSION,
+        .debugVersion   = FIRMWARE_DEBUG_VERSION,
     };
     
     T_DjiHalNetworkHandler halNetworkHandler = {
@@ -179,7 +179,7 @@ void DjiUser_StartTask(void const *argument)
         goto out;
     }
 
-    returnCode = DjiCore_SetAlias("PixyWS");
+    returnCode = DjiCore_SetAlias("PixyF");
     if (returnCode != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
         USER_LOG_ERROR("set alias error");
         goto out;
@@ -451,8 +451,8 @@ void DjiUser_MonitorTask(void const *argument)
             lastTaskStatusArraySize = currentTaskStatusArraySize;
 #endif
         }
-        USER_LOG_INFO("Used heap size: %d/%d.\r\n", configTOTAL_HEAP_SIZE - xPortGetFreeHeapSize(),
-                      configTOTAL_HEAP_SIZE);
+      //  USER_LOG_INFO("Used heap size: %d/%d.\r\n", configTOTAL_HEAP_SIZE - xPortGetFreeHeapSize(),
+        //              configTOTAL_HEAP_SIZE);
     }
 }
 

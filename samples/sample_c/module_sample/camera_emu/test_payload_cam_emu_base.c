@@ -33,8 +33,9 @@
 #include "dji_gimbal.h"
 #include "dji_xport.h"
 #include "gimbal_emu/test_payload_gimbal_emu.h"
+
 /*!< Include camera device*/
-#include "camera/gsdk_wws_camera.h"
+#include "camera/gsdk_flir_camera.h"
 
 /* Private constants ---------------------------------------------------------*/
 #define PAYLOAD_CAMERA_EMU_TASK_FREQ            (100)
@@ -305,7 +306,7 @@ static T_DjiReturnCode StartShootPhoto(void)
         s_cameraState.shootingState = DJI_CAMERA_SHOOTING_SINGLE_PHOTO;
         
         /*!< Set Event */
-        Dji_CameraSetEvent(CAM_EVENT_SET_START_PHOTO);
+        Dji_CameraSetEvent(CAM_EVENT_SET_START_SHOOT_PHOTO);
         
     } else if (s_cameraShootPhotoMode == DJI_CAMERA_SHOOT_PHOTO_MODE_BURST) {
         s_cameraState.shootingState = DJI_CAMERA_SHOOTING_BURST_PHOTO;
@@ -737,14 +738,66 @@ static T_DjiReturnCode StartContinuousOpticalZoom(E_DjiCameraZoomDirection direc
     s_isStartContinuousOpticalZoom = true;
     s_cameraZoomDirection = direction;
     s_cameraZoomSpeed = speed;
-    
-    if(direction == DJI_CAMERA_ZOOM_DIRECTION_IN) {
-         /*!< Set Event */
+
+    if(s_cameraZoomDirection == DJI_CAMERA_ZOOM_DIRECTION_IN) {
+                    
+        /*!< Check main camera */
+        if(FLIRCamera->videoTransmission == FLIR_VIDEO_TRANSMISSION_IR) {
+            
+            /*!< Check the level first */
+            if(FLIRCamera->zoomIRLevel == FLIR_ZOOM_IR_LEVEL_0) {
+                FLIRCamera->zoomIRLevel = FLIR_ZOOM_IR_LEVEL_1;
+            } else {
+                FLIRCamera->zoomIRLevel = FLIRCamera->zoomIRLevel << 1;
+            }
+            
+            if(FLIRCamera->zoomIRLevel > FLIR_ZOOM_IR_LEVEL_4) {
+                FLIRCamera->zoomIRLevel = FLIR_ZOOM_IR_LEVEL_4;
+            }
+            s_cameraOpticalZoomFocalLength = FLIRCamera->zoomIRLevel;
+        }
+        else {
+            if(FLIRCamera->zoomVISLevel == FLIR_ZOOM_VIS_LEVEL_0) {
+                FLIRCamera->zoomVISLevel = FLIR_ZOOM_VIS_LEVEL_1;
+            } else {
+                FLIRCamera->zoomVISLevel = FLIRCamera->zoomVISLevel << 1;
+            }
+            
+            if(FLIRCamera->zoomVISLevel > FLIR_ZOOM_VIS_LEVEL_8) {
+                FLIRCamera->zoomVISLevel = FLIR_ZOOM_VIS_LEVEL_8;
+            }
+            
+            s_cameraOpticalZoomFocalLength = FLIRCamera->zoomVISLevel;
+        }
+        
+        
+    /*!< Set event */
+     Dji_CameraSetEvent(CAM_EVENT_SET_ZOOM_IN);
+    } 
+    else if(s_cameraZoomDirection == DJI_CAMERA_ZOOM_DIRECTION_OUT) {
+
+        /*!< Check main camera */
+        if(FLIRCamera->videoTransmission == FLIR_VIDEO_TRANSMISSION_IR) {
+            
+            FLIRCamera->zoomIRLevel = FLIRCamera->zoomIRLevel >> 1;
+            
+            if(FLIRCamera->zoomIRLevel < FLIR_ZOOM_IR_LEVEL_1) {
+                FLIRCamera->zoomIRLevel = FLIR_ZOOM_IR_LEVEL_1;
+            }
+            s_cameraOpticalZoomFocalLength = FLIRCamera->zoomIRLevel;
+        }
+        else {
+            FLIRCamera->zoomVISLevel = FLIRCamera->zoomVISLevel >> 1;
+            
+            if(FLIRCamera->zoomVISLevel < FLIR_ZOOM_VIS_LEVEL_1) {
+                FLIRCamera->zoomVISLevel = FLIR_ZOOM_VIS_LEVEL_1;
+            }
+            
+            s_cameraOpticalZoomFocalLength = FLIRCamera->zoomVISLevel;
+        }
+        
+        /*!< Set event */
         Dji_CameraSetEvent(CAM_EVENT_SET_ZOOM_IN);
-    }
-    else {
-         /*!< Set Event */
-        Dji_CameraSetEvent(CAM_EVENT_SET_ZOOM_OUT);
     }
 
 
@@ -1375,13 +1428,12 @@ T_DjiReturnCode DjiTest_CameraEmuBaseStartService(void)
     }
 #endif
     
-    /*!< Create the camera wiris */
-    returnCode = GsdkWiris_CameraInit();
+    /*!< Create the camera Flir */
+    returnCode = GsdkFLIR_CameraInit();
     if (returnCode != DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS) {
-        USER_LOG_ERROR("create camera wiris error:0x%08llX", returnCode);
+        USER_LOG_ERROR("create camera FLIR error:0x%08llX", returnCode);
         return returnCode;
     }
-
     /* Create the camera emu taskHandle */
     if (osalHandler->TaskCreate("user_camera_task", UserCamera_Task,
                                 PAYLOAD_CAMERA_EMU_TASK_STACK_SIZE, NULL, &s_userCameraThread)
@@ -1451,16 +1503,11 @@ T_DjiReturnCode DjiTest_CameraGetOpticalZoomFactor(dji_f32_t *factor)
 
     //Formula:factor = currentFocalLength / minFocalLength
 //    *factor = (dji_f32_t) s_cameraOpticalZoomFocalLength / ZOOM_OPTICAL_FOCAL_MIN_LENGTH;
-    if(WIRISCamera->layout != SLAY_WWS_PIP) {
-        if(WIRISCamera->mainCam == SMCA_THERMAL) {
-            *factor = WIRISCamera->thermalZoomRatio;
-        }
-        else if(WIRISCamera->mainCam == SMCA_VISIBLE) {
-            *factor = WIRISCamera->visibleZoomRatio;
-        }
-    } 
+    if(FLIRCamera->videoTransmission == FLIR_VIDEO_TRANSMISSION_IR) {
+        *factor = FLIRCamera->zoomIRLevel;
+    }
     else {
-        *factor = WIRISCamera->visibleZoomRatio;
+        *factor = FLIRCamera->zoomVISLevel;
     }
 
     returnCode = osalHandler->MutexUnlock(s_zoomMutex);
@@ -1507,12 +1554,14 @@ T_DjiReturnCode DjiTest_CameraGetVideoStreamType(E_DjiCameraVideoStreamType *typ
 
 bool DjiTest_CameraIsInited(void)
 {
-    return s_isCamInited && WIRISCamera->isCamConnected;
+    bool camIsConnected = GremsyFLIR_isConnected();
+    
+    return s_isCamInited && camIsConnected;
 }
 
 T_DjiReturnCode Dji_CameraSetEvent(const uint32_t uxBitsToSet)
 {
-    return GsdkWiris_CameraSetEvent(uxBitsToSet);
+    return GsdkFLIR_CameraSetEvent(uxBitsToSet);
 //    return DJI_ERROR_SYSTEM_MODULE_CODE_SUCCESS;
 }
 

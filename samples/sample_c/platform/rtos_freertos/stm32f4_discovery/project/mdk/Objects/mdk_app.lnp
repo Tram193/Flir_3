@@ -1,6 +1,5 @@
 --cpu=Cortex-M4.fp.sp
 ".\objects\file_binary_array_list_en.o"
-".\objects\file_binary_array_list_en_1.o"
 ".\objects\test_camera_manager.o"
 ".\objects\test_data_transmission.o"
 ".\objects\test_fc_subscription.o"
@@ -20,7 +19,6 @@
 ".\objects\test_waypoint_v2.o"
 ".\objects\test_waypoint_v3.o"
 ".\objects\test_widget.o"
-".\objects\test_widget_interaction.o"
 ".\objects\test_widget_speaker.o"
 ".\objects\util_buffer.o"
 ".\objects\util_file.o"
@@ -84,7 +82,7 @@
 ".\objects\som_hardware_reset.o"
 ".\objects\som_communication.o"
 ".\objects\gsdk_gimbal.o"
-".\objects\gsdk_wws_camera.o"
+".\objects\gsdk_flir_camera.o"
 --library_type=microlib --scatter ".\Objects\mdk_app.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

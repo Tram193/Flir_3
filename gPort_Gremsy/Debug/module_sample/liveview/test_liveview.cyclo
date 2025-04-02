@@ -1,0 +1,3 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/liveview/test_liveview.c:55:17:DjiTest_LiveviewRunSample	19
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/liveview/test_liveview.c:198:13:DjiTest_FpvCameraStreamCallback	3
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/liveview/test_liveview.c:220:13:DjiTest_PayloadCameraStreamCallback	3

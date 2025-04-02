@@ -26,40 +26,31 @@
 /* Includes ------------------------------------------------------------------*/
 #include "file_binary_array_list_en.h"
 
-//#include "widget_file_c/en_big_screen/icon_button1_png.h"
-//#include "widget_file_c/en_big_screen/icon_button2_png.h"
-//#include "widget_file_c/en_big_screen/icon_list_item1_png.h"
-//#include "widget_file_c/en_big_screen/icon_list_item2_png.h"
-//#include "widget_file_c/en_big_screen/icon_scale_png.h"
-//#include "widget_file_c/en_big_screen/icon_switch_select_png.h"
-//#include "widget_file_c/en_big_screen/icon_switch_unselect_png.h"
-//#include "widget_file_c/en_big_screen/widget_config_json.h"
-
-#include "widget_file_c/en_big_screen/icon_list_security_png.h"
-#include "widget_file_c/en_big_screen/icon_list_fullscreen_png.h"
-#include "widget_file_c/en_big_screen/icon_list_pip_png.h"
-#include "widget_file_c/en_big_screen/button_selected_thermal_png.h"
-#include "widget_file_c/en_big_screen/button_selected_visible_png.h"
+#include "widget_file_c/en_big_screen/list_video_mode_ir_png.h"
+#include "widget_file_c/en_big_screen/list_video_mode_pip_png.h"
+#include "widget_file_c/en_big_screen/list_video_mode_vis_png.h"
+#include "widget_file_c/en_big_screen/switch_unselected_MSX_png.h"
+#include "widget_file_c/en_big_screen/switch_selected_MSX_png.h"
+#include "widget_file_c/en_big_screen/button_FFC_select_png.h"
+#include "widget_file_c/en_big_screen/button_FFC_unselect_png.h"
 #include "widget_file_c/en_big_screen/icon_scale_png.h"
-#include "widget_file_c/en_big_screen/widget_config_json.h" 
-#include "widget_file_c/en_big_screen/gimbal_on_item_png.h"
-#include "widget_file_c/en_big_screen/gimbal_off_item_png.h"
+#include "widget_file_c/en_big_screen/widget_config_json.h"
 
 /* Private constants ---------------------------------------------------------*/
 
 /* Export types -------------------------------------------------------------*/
 // English language file binary array list
 static T_DjiWidgetFileBinaryArray s_EnWidgetFileBinaryArrayList[] = {
-    {widget_config_json_fileName, widget_config_json_fileSize, widget_config_json_fileBinaryArray},
+    {widget_config_json_fileName,           widget_config_json_fileSize,            widget_config_json_fileBinaryArray},
 
-    {icon_list_fullscreen_png_fileName,     icon_list_fullscreen_png_fileSize,      icon_list_fullscreen_png_fileBinaryArray},
-    {icon_list_security_png_fileName,       icon_list_security_png_fileSize,        icon_list_security_png_fileBinaryArray},
-    {icon_list_pip_png_fileName,            icon_list_pip_png_fileSize,             icon_list_pip_png_fileBinaryArray},
-    {button_selected_thermal_png_fileName,  button_selected_thermal_png_fileSize,   button_selected_thermal_png_fileBinaryArray},
-    {button_selected_visible_png_fileName,  button_selected_visible_png_fileSize,   button_selected_visible_png_fileBinaryArray},
-    {icon_scale_png_fileName,               icon_scale_png_fileSize,                icon_scale_png_fileBinaryArray}    ,
-    {gimbal_on_item_png_fileName,               gimbal_on_item_png_fileSize,                gimbal_on_item_png_fileBinaryArray},
-    {gimbal_off_item_png_fileName,               gimbal_off_item_png_fileSize,                gimbal_off_item_png_fileBinaryArray},
+    {list_video_mode_ir_png_fileName,       list_video_mode_ir_png_fileSize,        list_video_mode_ir_png_fileBinaryArray},
+    {list_video_mode_vis_png_fileName,      list_video_mode_vis_png_fileSize,       list_video_mode_vis_png_fileBinaryArray},
+    {list_video_mode_pip_png_fileName,      list_video_mode_pip_png_fileSize,       list_video_mode_pip_png_fileBinaryArray},
+    {switch_selected_MSX_png_fileName,      switch_selected_MSX_png_fileSize,       switch_selected_MSX_png_fileBinaryArray},
+    {switch_unselected_MSX_png_fileName,    switch_unselected_MSX_png_fileSize,     switch_unselected_MSX_png_fileBinaryArray},
+    {button_FFC_select_png_fileName,        button_FFC_select_png_fileSize,         button_FFC_select_png_fileBinaryArray},
+    {button_FFC_unselect_png_fileName,      button_FFC_unselect_png_fileSize,       button_FFC_unselect_png_fileBinaryArray},
+    {icon_scale_png_fileName,               icon_scale_png_fileSize,                icon_scale_png_fileBinaryArray},
 };
 
 /* Export values -------------------------------------------------------------*/

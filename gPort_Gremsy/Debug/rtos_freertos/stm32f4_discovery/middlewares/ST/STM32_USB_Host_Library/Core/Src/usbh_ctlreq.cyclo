@@ -1,0 +1,17 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c:103:20:USBH_Get_DevDesc	2
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c:130:20:USBH_Get_CfgDesc	2
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c:158:20:USBH_Get_StringDesc	2
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c:188:20:USBH_GetDescriptor	3
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c:222:20:USBH_SetAddress	2
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c:248:20:USBH_SetCfg	2
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c:272:20:USBH_SetInterface	2
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c:297:20:USBH_SetFeature	2
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c:322:20:USBH_ClrFeature	2
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c:346:14:USBH_ParseDevDesc	2
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c:380:13:USBH_ParseCfgDesc	8
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c:441:14:USBH_ParseInterfaceDesc	1
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c:463:14:USBH_ParseEPDesc	1
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c:483:13:USBH_ParseStringDesc	3
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c:523:21:USBH_GetNextDesc	1
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c:545:20:USBH_CtlReq	6
+D:/gPort_PSDKv350_Flir/samples/sample_c/platform/rtos_freertos/stm32f4_discovery/middlewares/ST/STM32_USB_Host_Library/Core/Src/usbh_ctlreq.c:611:27:USBH_HandleControl	32

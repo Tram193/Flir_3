@@ -1,0 +1,11 @@
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/waypoint_v2/test_waypoint_v2.c:88:17:DjiTest_WaypointV2RunSample	12
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/waypoint_v2/test_waypoint_v2.c:202:31:DjiTest_WaypointV2GenerateWaypointV2Actions	4
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/waypoint_v2/test_waypoint_v2.c:238:13:DjiTest_WaypointV2SetDefaultSetting	1
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/waypoint_v2/test_waypoint_v2.c:255:25:DjiTest_WaypointV2GeneratePolygonWaypointV2	3
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/waypoint_v2/test_waypoint_v2.c:304:9:DJiTest_WaypointV2GetMissionEventIndex	3
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/waypoint_v2/test_waypoint_v2.c:317:9:DjiTest_WaypointV2GetMissionStateIndex	3
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/waypoint_v2/test_waypoint_v2.c:330:24:DjiTest_WaypointV2EventCallback	8
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/waypoint_v2/test_waypoint_v2.c:370:24:DjiTest_WaypointV2StateCallback	2
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/waypoint_v2/test_waypoint_v2.c:386:24:DjiTest_WaypointV2Init	4
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/waypoint_v2/test_waypoint_v2.c:409:24:DjiTest_WaypointV2DeInit	3
+D:/gPort_PSDKv350_Flir/samples/sample_c/module_sample/waypoint_v2/test_waypoint_v2.c:428:24:DjiTest_WaypointV2UploadMission	2

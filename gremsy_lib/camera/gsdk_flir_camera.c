@@ -326,7 +326,8 @@ T_DjiReturnCode GsdkFlir_GetParams(T_FlirParamters *params)
  * @note 
  */
 bool GremsyFLIR_isConnected(void )
-{
+{   
+    static bool wasConnected=true;
     uint32_t tnow_ms = 0;
     T_DjiOsalHandler *osalHandler = DjiPlatform_GetOsalHandler();
     
@@ -337,10 +338,13 @@ bool GremsyFLIR_isConnected(void )
     if(tnow_ms - s_pFLIRHandle->lastTimeConnection > PSDK_COMM_WAIT_RESPOND_TIMEOUT || !s_pFLIRHandle->isCameraConnected) {
         
         s_pFLIRHandle->isCameraConnected = false;
-        
+        if (wasConnected){
         DebugWarning("Flir is not connected!");
-        
+        wasConnected = false;}
         return false;
+    }
+    if(!wasConnected){
+        wasConnected = true;
     } 
     
     return true;
